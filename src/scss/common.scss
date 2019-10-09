@@ -54,3 +54,11 @@ div, p, span {
     background: $color-primary-2;
   }
 }
+
+p.text{
+  font-size: 14px;
+  line-height: 150%;
+  &--long{
+    line-height: 190%;
+  }
+}
