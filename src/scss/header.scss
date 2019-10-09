@@ -5,11 +5,17 @@
   }
 
   &-decor {
+    @include bg-gradient;
     height: 10px;
   }
 
   &-logo {
     display: inline-block;
+    img{
+      display: block;
+      width: 156px;
+      height: auto;
+    }
   }
 
   &-info {
@@ -60,6 +66,10 @@
     }
   }
 
+  .navbar{
+    padding: 0;
+    @include bg-gradient;
+  }
   .nav {
     &-item{
       padding: 17px 0;

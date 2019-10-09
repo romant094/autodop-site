@@ -11,7 +11,7 @@ div, p, span {
   font-size: 18px;
 }
 
-.list{
+.list {
   list-style-type: none;
   padding-left: 0;
 }
@@ -29,6 +29,7 @@ div, p, span {
       font-size: 50px;
       line-height: 130%;
       text-transform: uppercase;
+      margin-bottom: 25px;
     }
 
     h4 {
@@ -36,13 +37,20 @@ div, p, span {
       line-height: 100%;
       letter-spacing: 5px;
       text-transform: uppercase;
+      margin-bottom: 15px;
     }
   }
 }
 
-.btn.btn-custom{
+.btn.btn-custom {
+  @include bg-gradient;
+  border: none;
   color: $grey-primary;
   padding: 21px 38px;
   font-weight: bold;
   font-size: 18px;
+  transition: none;
+  &:hover{
+    background: $color-primary-2;
+  }
 }
