@@ -1,0 +1,20 @@
+.top {
+  padding: 163px 0;
+  background: url("../img/top-bg.png") center right no-repeat $black-secondary;
+
+  h1 {
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 100%;
+    margin-bottom: 20px;
+    color: $grey-primary;
+  }
+
+  h2 {
+    font-size: 36px;
+    line-height: 100%;
+    margin-bottom: 30px;
+    color: $grey-primary;
+  }
+
+}
