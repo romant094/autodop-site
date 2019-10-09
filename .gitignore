@@ -2,3 +2,6 @@
 /node_modules/
 .idea
 **/*.lock
+/dist/js/
+/dist/img/
+/dist/css/
