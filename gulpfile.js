@@ -2,18 +2,47 @@
 
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const imagemin = require('gulp-imagemin');
 
-const src = './assets/sass';
-const dest = './assets/css';
+const src = './src';
+const dist = './dist';
 
+const path = {
+    src: {
+        scss: src + '/scss',
+        img: src + '/img'
+    },
+    dist: {
+        css: dist + '/css',
+        img: dist + '/img'
+    }
+};
 
-sass.compiler = require('node-sass');
-
-gulp.task('sass', () => {
-    gulp.src(`${src}/**/styles.scss`)
-        .pipe(sass())
-        .pipe(gulp.dest(dest))
+gulp.task('scss', (done) => {
+    gulp.src(path.src.scss + '/**/styles.scss')
+        .pipe(sass({
+            outputStyle: 'compact'
+        }).on('error', sass.logError))
+        .pipe(gulp.dest(path.dist.css));
+    done();
 });
-gulp.task('watch', function() {
-    gulp.watch(`${src}/**/*.scss`, gulp.series('sass'));
+
+gulp.task('compress', (done) => {
+    gulp.src(path.src.img + '/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest(path.dist.img));
+    done();
+});
+
+gulp.task('watcher', () => {
+    gulp.watch(path.src.scss, gulp.series('scss'));
+    gulp.watch(path.src.img + '/*', gulp.series('compress'));
+});
+
+gulp.task('build', gulp.series('scss', 'compress', done => {
+    done()
+}));
+
+gulp.task('default', gulp.series('scss', 'compress', 'watcher'), done => {
+    done();
 });
