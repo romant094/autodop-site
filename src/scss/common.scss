@@ -7,6 +7,10 @@ div, p, span {
   font-size: 14px;
 }
 
+p, ul{
+  margin-bottom: 0;
+}
+
 .fz18 {
   font-size: 18px;
 }
@@ -20,6 +24,9 @@ div, p, span {
   padding: 100px 0;
 
   &-content {
+    &--about{
+      margin-bottom: 100px;
+    }
 
   }
 
@@ -35,7 +42,7 @@ div, p, span {
     h4 {
       font-size: 24px;
       line-height: 100%;
-      letter-spacing: 5px;
+      letter-spacing: 1px;
       text-transform: uppercase;
       margin-bottom: 15px;
     }
@@ -46,12 +53,29 @@ div, p, span {
   @include bg-gradient;
   border: none;
   color: $grey-primary;
-  padding: 21px 38px;
+  padding: 0 40px;
   font-weight: bold;
   font-size: 18px;
   transition: none;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:hover{
     background: $color-primary-2;
+  }
+}
+
+input[type="text"].form-control{
+  font-size: 16px;
+  line-height: 20px;
+  border: 1px solid $grey-secondary;
+  background-color: $white;
+  height: 60px;
+  padding-left: 25px;
+
+  &::placeholder{
+    color: $grey-secondary;
   }
 }
 
@@ -61,4 +85,10 @@ p.text{
   &--long{
     line-height: 190%;
   }
+}
+
+img{
+  display: block;
+  width: 100%;
+  height: auto;
 }

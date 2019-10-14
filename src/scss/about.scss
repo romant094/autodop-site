@@ -1,0 +1,14 @@
+.about {
+  &-card {
+    &__header {
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 100%;
+    }
+
+    &__text {
+      font-size: 18px;
+      line-height: 100%;
+    }
+  }
+}

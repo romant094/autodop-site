@@ -25,7 +25,7 @@
                     </div>
                     <div class="contacts-phone">
                         <p><a href="tel:+79123456789">8 912 345 67 89</a></p>
-                        <p><a href="mailto:info@example.com">info@example.com</a></p>
+                        <p><a href="mailto:info@example.com">info@autodopspb.ru</a></p>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
         <div class="container">
             <ul class="nav">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">О нас</a>
+                    <a href="#about" class="nav-link">О нас</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Услуги и цены</a>
@@ -69,12 +69,12 @@
     </section>
     <section class="section about">
         <div class="container">
-            <div class="section-content">
+            <div class="section-content section-content--about">
                 <div class="d-flex row">
                     <div class="col-6">
-                        <div class="section-header">
-                            <h4>Несколько слов о нас</h4>
-                            <h3>Работаем с 2012 года</h3>
+                        <div class="section-header" id="about">
+                            <h4>Несколько слов о&nbsp;нас</h4>
+                            <h3>РАБОТАЕМ С&nbsp;2012&nbsp;ГОДА</h3>
                         </div>
                         <div class="tabs" id="about-us">
                             <ul class="tabs-actions d-flex justify-content-between list">
@@ -84,12 +84,10 @@
                             </ul>
                             <ul class="tabs-content list">
                                 <li class="active">
-                                    <p class="text text--long">Занимаемся восстановлением и&nbsp;ремонтом
-                                        автостёкол, сохраняя и&nbsp;улучшая их&nbsp;структурные качества, которые со&nbsp;временем
-                                        теряются, подвергаясь естественному износу, а&nbsp;так&nbsp;же в&nbsp;ряде человеческих
-                                        факторов. Мы&nbsp;вернем вашему стеклу прозрачность, уберем царапины&nbsp;от
-                                        дворников и&nbsp;от&nbsp;скребка после чистки наледи, снимем налёты и&nbsp;жирные
-                                        разводы, когда дворники &laquo;мажут&raquo;, уберем сколы и&nbsp;царапины.</p>
+                                    <p class="text text--long">Занимаемся ремонтом и&nbsp;восстановлением автостёкол.
+                                        Возвращаем стеклу прозрачность, убираем царапины от&nbsp;дворников и&nbsp;скребка
+                                        после чистки наледи, снимем налёты и&nbsp;жирные разводы.
+                                    </p>
                                 </li>
                                 <li>
                                     <p class="text text--long">Делаем свою работу, чтобы отсрочить или совсем избежать
@@ -115,48 +113,44 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <div class="slider">
-                            <div class="slider-content">
-                                <img src="" alt="slide">
+                        <div class="slider" id="slider-about">
+                            <div class="slider-content mb-3">
+                                <img src="img/slider1.png" alt="slide">
                             </div>
-                            <ul class="slider-nav">
-                                <li>
-                                    <img src="" alt="1">
+                            <ul class="slider-nav list d-flex row">
+                                <li class="col-3 active">
+                                    <img src="img/slider1.png" alt="1">
                                 </li>
-                                <li>
-                                    <img src="" alt="2">
+                                <li class="col-3">
+                                    <img src="img/slider2.png" alt="2">
                                 </li>
-                                <li>
-                                    <img src="" alt="3">
+                                <li class="col-3">
+                                    <img src="img/slider3.png" alt="3">
                                 </li>
-                                <li>
-                                    <img src="" alt="4">
+                                <li class="col-3">
+                                    <img src="img/slider4.png" alt="4">
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="section cgrid">
-        <div class="container">
-            <div class="section-content">
-                <div class="ccard">
-                    <div class="ccard-header">7</div>
-                    <div class="ccard-text">лет на рынке</div>
+            <div class="section-content d-flex justify-content-between">
+                <div class="about-card">
+                    <div class="about-card__header">7</div>
+                    <div class="about-card__text">лет на рынке</div>
                 </div>
-                <div class="ccard">
-                    <div class="ccard-header">5 000</div>
-                    <div class="ccard-text">восстановленных стекол</div>
+                <div class="about-card">
+                    <div class="about-card__header">5 000</div>
+                    <div class="about-card__text">восстановленных стекол</div>
                 </div>
-                <div class="ccard">
-                    <div class="ccard-header">2</div>
-                    <div class="ccard-text">точки в городе</div>
+                <div class="about-card">
+                    <div class="about-card__header">2</div>
+                    <div class="about-card__text">точки в городе</div>
                 </div>
-                <div class="ccard">
-                    <div class="ccard-header">99%</div>
-                    <div class="ccard-text">положительных результатов</div>
+                <div class="about-card">
+                    <div class="about-card__header">99%</div>
+                    <div class="about-card__text">положительных результатов</div>
                 </div>
             </div>
         </div>
@@ -176,7 +170,7 @@
                         <input class="form-control" type="text" placeholder="Ваш контактный номер">
                     </div>
                     <div class="col-4">
-                        <input class="btn btn-danger btn-block" type="submit" value="Отправить форму">
+                        <input class="btn btn-custom btn-block" type="submit" value="Отправить форму">
                     </div>
                 </form>
             </div>
@@ -204,25 +198,26 @@
                                         <div class="table-cell col-4">Стоимость</div>
                                     </div>
                                     <div class="table-row row">
-                                        <div class="table-cell col-8">Лобовое стекло на авто класса «Седан»</div>
+                                        <div class="table-cell col-8">Лобовое стекло на&nbsp;авто класса &laquo;Седан&raquo;</div>
                                         <div class="table-cell col-4">3 000 ₽</div>
                                     </div>
                                     <div class="table-row row">
-                                        <div class="table-cell col-8">Лобовое стекло на авто класса «Кроссовер»</div>
+                                        <div class="table-cell col-8">Лобовое стекло на&nbsp;авто класса &laquo;Кроссовер&raquo;</div>
                                         <div class="table-cell col-4">3 500 ₽</div>
                                     </div>
                                     <div class="table-row row">
-                                        <div class="table-cell col-8">Лобовое стекло на авто класса «Внедорожник» или
-                                            «Минивен»
+                                        <div class="table-cell col-8">Лобовое стекло на&nbsp;авто класса &laquo;Внедорожник&raquo;
+                                            или
+                                            &laquo;Минивен&raquo;
                                         </div>
                                         <div class="table-cell col-4">4 000 ₽</div>
                                     </div>
                                     <div class="table-row row">
-                                        <div class="table-cell col-8">Заднее стекло на авто любого класса</div>
+                                        <div class="table-cell col-8">Заднее стекло на&nbsp;авто любого класса</div>
                                         <div class="table-cell col-4">3 000 ₽</div>
                                     </div>
                                     <div class="table-row row">
-                                        <div class="table-cell col-8">Витринные стекла, зеркала, стеклопакеты и прочие
+                                        <div class="table-cell col-8">Витринные стекла, зеркала, стеклопакеты и&nbsp;прочие
                                             стекла
                                         </div>
                                         <div class="table-cell col-4">от 5 000 ₽</div>
@@ -368,24 +363,24 @@
                         <input class="form-control" type="text" placeholder="Ваш контактный номер">
                     </div>
                     <div class="col-4">
-                        <input class="btn btn-danger btn-block" type="submit" value="Отправить форму">
+                        <input class="btn btn-custom btn-block" type="submit" value="Отправить форму">
                     </div>
                 </form>
             </div>
         </div>
     </section>
-    <section class="section form">
+    <section class="section">
         <div class="container">
             <div class="section-content">
                 <div class="section-header">
                     <h4>оцените</h4>
                     <h3>наши работы</h3>
                 </div>
-                <div class="filters">
-                    <ul class="filter-params list">
-                        <li class="active">Все</li>
-                        <li>Полировка</li>
-                        <li>Ремонт</li>
+                <div class="filter">
+                    <ul class="filter-params list d-flex">
+                        <li class="mr-3 active">Все</li>
+                        <li class="mr-3">Полировка</li>
+                        <li class="mr-3">Ремонт</li>
                         <li>Прочее</li>
                     </ul>
                     <div class="filter-content">
@@ -412,7 +407,7 @@
                         </div>
                     </div>
                     <div class="section-footer text-center">
-                        <button class="btn btn-danger">Показать еще</button>
+                        <button class="btn btn-custom mx-auto">Показать еще</button>
                     </div>
                 </div>
             </div>
@@ -425,9 +420,9 @@
                     <h4>почитайте</h4>
                     <h3>что о нас говорят</h3>
                 </div>
-                <div class="slider">
+                <div class="slider" id="slider-feedback">
                     <div class="d-flex justify-content-between">
-                        <div class="slider-arrow col-1 row">
+                        <div class="slider-arrow slider-arrow--prev col-1 row">
                             <svg xmlns="http://www.w3.org/2000/svg" width="41" height="123" viewBox="0 0 41 123"
                                  fill="none">
                                 <path d="M39 2L2 61.5L39 121" stroke="#B6B6B6" stroke-width="3" stroke-linecap="round"
@@ -458,7 +453,7 @@
                                 magna laborum ipsum aliqua eiusmod non in amet consectetur ad adipisicing.
                             </div>
                         </div>
-                        <div class="slider-arrow slider-arrow--right col-1 row">
+                        <div class="slider-arrow slider-arrow--next col-1 row">
                             <svg xmlns="http://www.w3.org/2000/svg" width="41" height="123" viewBox="0 0 41 123"
                                  fill="none">
                                 <path d="M39 2L2 61.5L39 121" stroke="#B6B6B6" stroke-width="3" stroke-linecap="round"
@@ -548,5 +543,6 @@
 </main>
 
 <script src="js/tabs.js"></script>
+<script src="js/slider.js"></script>
 </body>
 </html>
