@@ -11,11 +11,13 @@ const dist = './dist';
 const path = {
     src: {
         scss: src + '/scss',
-        img: src + '/img'
+        img: src + '/img',
+        js: src + '/js'
     },
     dist: {
         css: dist + '/css',
-        img: dist + '/img'
+        img: dist + '/img',
+        js: dist + '/js'
     }
 };
 
@@ -37,20 +39,23 @@ gulp.task('images', (done) => {
     done();
 });
 
-gulp.task('js', (done)=>{
-
+gulp.task('js', (done) => {
+    gulp.src(path.src.js + '/*')
+        .pipe(plumber())
+        .pipe(gulp.dest(path.dist.js));
     done();
 });
 
 gulp.task('watcher', () => {
     gulp.watch(path.src.scss, gulp.series('scss'));
+    gulp.watch(path.src.js + '/*', gulp.series('js'));
     gulp.watch(path.src.img + '/*', gulp.series('images'));
 });
 
-gulp.task('build', gulp.series('scss', 'images', done => {
+gulp.task('build', gulp.series('scss', 'js', 'images', done => {
     done()
 }));
 
-gulp.task('default', gulp.series('scss', 'images', 'watcher'), done => {
+gulp.task('default', gulp.series('scss', 'js', 'images', 'watcher'), done => {
     done();
 });
