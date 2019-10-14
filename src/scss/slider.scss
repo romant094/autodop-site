@@ -1,19 +1,19 @@
 .slider {
   &-content {
-    border-radius: 5px;
+    @include border-radius-5;
     img{
-      border-radius: 5px;
+      @include border-radius-5;
     }
   }
 
   &-nav {
     li {
-      border-radius: 5px;
+      @include border-radius-5;
 
       img {
         max-width: 123px;
         max-height: 58px;
-        border-radius: 5px;
+        @include border-radius-5;
       }
     }
 

@@ -1,0 +1,25 @@
+.steps{
+  .step{
+    max-width: 276px;
+    display: flex;
+    align-items: center;
+
+    &-number{
+      border-radius: 100px;
+      min-width: 70px;
+      width: 70px;
+      height: 70px;
+      background-color: $color-secondary;
+      font-weight: bold;
+      font-size: 36px;
+      color: $white;
+      margin-right: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &-text{
+      min-width: 194px;
+    }
+  }
+}

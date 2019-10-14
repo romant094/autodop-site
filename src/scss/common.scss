@@ -31,12 +31,12 @@ p, ul{
   }
 
   &-header {
+    margin-bottom: 50px;
     h3 {
       font-weight: bold;
       font-size: 50px;
       line-height: 130%;
       text-transform: uppercase;
-      margin-bottom: 25px;
     }
 
     h4 {
@@ -63,6 +63,7 @@ p, ul{
   justify-content: center;
   &:hover{
     background: $color-primary-2;
+    color: $white;
   }
 }
 
@@ -91,4 +92,15 @@ img{
   display: block;
   width: 100%;
   height: auto;
+}
+
+.mb-50{
+  margin-bottom: 50px;
+}
+.mb-30{
+  margin-bottom: 30px;
+}
+
+.pl-30{
+  padding-left: 30px;
 }
