@@ -7,7 +7,7 @@ div, p, span {
   font-size: 14px;
 }
 
-p, ul{
+p, ul {
   margin-bottom: 0;
 }
 
@@ -24,7 +24,7 @@ p, ul{
   padding: 100px 0;
 
   &-content {
-    &--about{
+    &--about {
       margin-bottom: 100px;
     }
 
@@ -32,6 +32,7 @@ p, ul{
 
   &-header {
     margin-bottom: 50px;
+
     h3 {
       font-weight: bold;
       font-size: 50px;
@@ -61,13 +62,14 @@ p, ul{
   display: flex;
   align-items: center;
   justify-content: center;
-  &:hover{
+
+  &:hover {
     background: $color-primary-2;
     color: $white;
   }
 }
 
-input[type="text"].form-control{
+input[type="text"].form-control {
   font-size: 16px;
   line-height: 20px;
   border: 1px solid $grey-secondary;
@@ -75,32 +77,42 @@ input[type="text"].form-control{
   height: 60px;
   padding-left: 25px;
 
-  &::placeholder{
+  &::placeholder {
     color: $grey-secondary;
   }
 }
 
-p.text{
+p.text {
   font-size: 14px;
-  line-height: 150%;
-  &--long{
-    line-height: 190%;
+  line-height: 1.5;
+
+  &--medium {
+    line-height: 1.7;
+  }
+
+  &--long {
+    line-height: 1.9;
   }
 }
 
-img{
+img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.mb-50{
+.mb-50 {
   margin-bottom: 50px;
 }
-.mb-30{
+
+.mb-20{
+  margin-bottom: 20px;
+}
+
+.mb-30 {
   margin-bottom: 30px;
 }
 
-.pl-30{
+.pl-30 {
   padding-left: 30px;
 }

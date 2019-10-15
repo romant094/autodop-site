@@ -1,0 +1,67 @@
+.feedback {
+  .slider {
+    &-arrow {
+      display: flex;
+      align-items: center;
+
+      svg {
+        path {
+          transition: all 0.3s;
+        }
+
+        &:hover {
+          path {
+            stroke: $color-secondary
+          }
+        }
+      }
+
+      &--next {
+        transform: rotate(180deg);
+      }
+
+    }
+
+    &-content {
+      &__people {
+        .person {
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          &--opacity25 {
+            opacity: 0.25;
+          }
+
+          &--opacity50 {
+            opacity: 0.5;
+          }
+
+          &--size40 {
+            img{
+              width: 40px;
+            }
+          }
+
+          &--size80 {
+            img{
+              width: 80px;
+              margin: 0;
+            }
+          }
+
+          img {
+
+          }
+
+        }
+        .name{
+
+        }
+      }
+
+      &__text {
+
+      }
+    }
+  }
+}
