@@ -1,6 +1,7 @@
 .filter {
   &-params {
     margin-bottom: 25px;
+
     li {
       cursor: pointer;
     }
@@ -13,12 +14,20 @@
 
   &-content {
     margin-bottom: 30px;
-    img {
-
-    }
+    width: 100% !important;
+    height: auto !important;
+    @include border-radius-5;
   }
 
   &-list {
     margin-bottom: 50px;
+
+    &__item{
+      img{
+        @include border-radius-5;
+        @include shadow;
+        cursor: pointer;
+      }
+    }
   }
 }

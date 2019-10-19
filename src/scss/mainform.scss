@@ -1,8 +1,49 @@
-.mainform{
+.mainform {
   background: url("../img/main-form-bg.png") no-repeat left 0 center;
-  .section-content--mainform{
+  background-size: cover;
+
+  .section-content--mainform {
     background-color: $white;
     padding: 55px 0;
     @include border-radius-5;
+  }
+
+  .checkbox {
+    display: flex;
+
+    &-input {
+      display: none;
+
+      &:checked + .checkbox-custom::before {
+        position: absolute;
+        border-radius: 2px;
+        display: block;
+        width: 12px;
+        height: 12px;
+        top: 3px;
+        left: 3px;
+        bottom: 3px;
+        right: 3px;
+        background-color: $color-primary-1;
+        content: "";
+      }
+    }
+
+    &-custom {
+      display: inline-block;
+      margin-right: 8px;
+      min-width: 20px;
+      width: 20px;
+      height: 20px;
+      position: relative;
+      border: 1px solid $grey-secondary;
+      border-radius: 3px;
+    }
+
+    &-text {
+      a{
+        color: $color-secondary;
+      }
+    }
   }
 }

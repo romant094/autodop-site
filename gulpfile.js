@@ -4,6 +4,9 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const imagemin = require('gulp-imagemin');
 const plumber = require('gulp-plumber');
+const jpegrecompress = require('imagemin-jpeg-recompress');
+const pngquant = require('imagemin-pngquant');
+const cache = require('gulp-cache');
 
 const src = './src';
 const dist = './dist';
@@ -34,7 +37,16 @@ gulp.task('scss', (done) => {
 gulp.task('images', (done) => {
     gulp.src(path.src.img + '/*')
         .pipe(plumber())
-        .pipe(imagemin())
+        .pipe(cache(imagemin([
+            imagemin.gifsicle({interlaced: true}),
+            jpegrecompress({
+                progressive: true,
+                max: 90,
+                min: 80
+            }),
+            pngquant(),
+            imagemin.svgo({plugins: [{removeViewBox: false}]})
+        ])))
         .pipe(gulp.dest(path.dist.img));
     done();
 });
