@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Автодоп</title>
-
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -24,7 +24,7 @@
                         <p>2464 Valley View Ln, Coppell</p>
                     </div>
                     <div class="contacts-phone">
-                        <p><a href="tel:+79123456789">8 912 345 67 89</a></p>
+                        <p><a class="tel" href="tel:+79123456789">8 912 345 67 89</a></p>
                         <p><a href="mailto:info@example.com">info@autodopspb.ru</a></p>
                     </div>
                 </div>
@@ -35,22 +35,22 @@
         <div class="container">
             <ul class="nav">
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">О нас</a>
+                    <a href="#about" class="nav-link scroll">О нас</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Услуги и цены</a>
+                    <a href="#products" class="nav-link scroll">Услуги и цены</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Этапы работы</a>
+                    <a href="#steps" class="nav-link scroll">Этапы работы</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Галерея работ</a>
+                    <a href="#portfolio" class="nav-link scroll">Галерея работ</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Отзывы</a>
+                    <a href="#feedback" class="nav-link scroll">Отзывы</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Контакты</a>
+                    <a href="#contacts" class="nav-link scroll">Контакты</a>
                 </li>
             </ul>
         </div>
@@ -169,7 +169,7 @@
     <section class="section products">
         <div class="container">
             <div class="section-content">
-                <div class="section-header">
+                <div class="section-header" id="products">
                     <h4>узнайте</h4>
                     <h3>Наши цены и услуги</h3>
                 </div>
@@ -280,7 +280,7 @@
     <section class="section steps pt-0">
         <div class="container">
             <div class="section-content">
-                <div class="section-header">
+                <div class="section-header" id="steps">
                     <h4>а теперь посмотрите</h4>
                     <h3>Как мы работаем</h3>
                 </div>
@@ -339,13 +339,13 @@
     <section class="section portfolio pb-0">
         <div class="container">
             <div class="section-content">
-                <div class="section-header">
+                <div class="section-header" id="portfolio">
                     <h4>оцените</h4>
                     <h3>наши работы</h3>
                 </div>
                 <div class="filter">
                     <ul class="filter-params list d-flex">
-                        <li class="mr-3 active" data-filter="all">Все</li>
+                        <li class="mr-3 active" data-filter="0">Все</li>
                         <li class="mr-3" data-filter="1">Полировка</li>
                         <li class="mr-3" data-filter="2">Ремонт</li>
                         <li data-filter="3">Прочее</li>
@@ -387,7 +387,7 @@
     <section class="section feedback">
         <div class="container">
             <div class="section-content">
-                <div class="section-header">
+                <div class="section-header" id="feedback">
                     <h4>почитайте</h4>
                     <h3>что о нас говорят</h3>
                 </div>
@@ -457,14 +457,14 @@
                         <label class="checkbox">
                             <input class="checkbox-input" type="checkbox" checked>
                             <span class="checkbox-custom"></span>
-                            <span class="checkbox-text">Согласен с <a href="#">политикой конфиденциальности</a> и на обработку персональных данных</span>
+                            <span class="checkbox-text">Согласен с <a class="open-modal" href="javascript:void(0)">политикой конфиденциальности</a> и на обработку персональных данных</span>
                         </label>
                     </div>
                 </form>
             </div>
         </div>
     </section>
-    <footer class="footer">
+    <footer class="footer" id="contacts">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="">
@@ -493,14 +493,14 @@
                     </div>
                     <div class="row">
                         <ul class="col-6 footer-list list">
-                            <li><a href="#">О нас</a></li>
-                            <li><a href="#">Услуги и цены</a></li>
-                            <li><a href="#">Галерея работ</a></li>
+                            <li><a class="scroll" href="#about">О нас</a></li>
+                            <li><a class="scroll" href="#products">Услуги и цены</a></li>
+                            <li><a class="scroll" href="#portfolio">Галерея работ</a></li>
                         </ul>
                         <ul class="col-6 footer-list list">
-                            <li><a href="#">Отзывы</a></li>
-                            <li><a href="#">Контакты</a></li>
-                            <li><a href="#">Политика<br>конфиденциальности</a></li>
+                            <li><a class="scroll" href="#feedback">Отзывы</a></li>
+                            <li><a class="scroll" href="#contacts">Контакты</a></li>
+                            <li><a class="open-modal" href="javascript:void(0)">Политика<br>конфиденциальности</a></li>
                         </ul>
                     </div>
 
@@ -510,9 +510,9 @@
                         <h5>действия</h5>
                     </div>
                     <ul class="footer-list list">
-                        <li><a href="#">Записаться на прием</a></li>
-                        <li><a href="#">Заказать обратный звонок</a></li>
-                        <li><a href="#">Узнать, где мы</a></li>
+                        <li><a class="open-modal" href="javascript:void(0)">Записаться на прием</a></li>
+                        <li><a class="open-modal" href="javascript:void(0)">Заказать обратный звонок</a></li>
+                        <li><a class="open-modal" href="javascript:void(0)">Узнать, где мы</a></li>
                     </ul>
                 </div>
             </div>
@@ -520,9 +520,70 @@
     </footer>
 </main>
 
-<script src="../src/js/tabs.js"></script>
-<script src="../src/js/slider.js"></script>
+<div class="modal" id="modal">
+    <form class="section modal-form col-8">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="text-center">Получить расчет</h3>
+            </div>
+            <div class="row modal-form__line extra mb-5">
+                <div class="col-6">
+                    <input name="" type="text" class="form-control" placeholder="Как к вам обращаться" required>
+                </div>
+                <div class="col-6">
+                    <input name="" type="text" class="form-control" placeholder="Укажите номер телефона" required>
+                </div>
+            </div>
+            <div class="row modal-form__line extra mb-5">
+                <div class="col-6">
+                    <select name="" class="form-control" required>
+                        <option value="" selected hidden disabled>Марка автомобиля</option>
+                        <option value="kia">Kia</option>
+                        <option value="volvo">Volvo</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <select name="" class="form-control" required>
+                        <option value="" selected hidden disabled>Модель автомобиля</option>
+                        <option value="rio">Rio</option>
+                        <option value="ceed">Ceed</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row modal-form__line mb-4">
+                <div class="col-6">
+                    <select name="" class="form-control" required>
+                        <option value="" selected hidden disabled>Выберите салон</option>
+                        <option value="1">Салон по адресу 1</option>
+                        <option value="2">Салон по адресу 2</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <select name="" class="form-control" required>
+                        <option value="" selected hidden disabled>Удобное время</option>
+                        <option value="10">10:00</option>
+                        <option value="1030">10:30</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-form__submit col-6 mx-auto">
+                <input type="submit" class="btn btn-custom btn-block mx-auto mb-3" value="Отправить заявку">
+                <div>
+                    <label class="checkbox">
+                        <input class="checkbox-input" type="checkbox" checked>
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-text">Согласен с&nbsp;<a class="open-modal" href="javascript:void(0)">политикой конфиденциальности</a> и&nbsp;на&nbsp;обработку персональных данных</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="js/tabs.js"></script>
+<script src="js/slider.js"></script>
 <script src="js/image-comparison-slider.min.js"></script>
 <script src="js/filters.js"></script>
+<script src="js/scrolling.js"></script>
 </body>
 </html>
