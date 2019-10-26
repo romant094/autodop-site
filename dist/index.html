@@ -20,11 +20,11 @@
                 </div>
                 <div class="contacts col-6 d-flex justify-content-between align-items-center">
                     <div class="contacts-address">
-                        <p>7392 W Belt Line Rd, Round Rock</p>
-                        <p>2464 Valley View Ln, Coppell</p>
+                        <p>наб. Обводного канала, 64к2</p>
+                        <p>ул. Лужская, 3к2</p>
                     </div>
                     <div class="contacts-phone">
-                        <p><a class="tel" href="tel:+79123456789">8 912 345 67 89</a></p>
+                        <p><a class="tel" href="tel:+79119114981">8 911 911 49 81</a></p>
                         <p><a href="mailto:info@example.com">info@autodopspb.ru</a></p>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
             <div class="section-content">
                 <h1>Ремонт и полировка автостекол</h1>
                 <h2>Профессионально и с гарантией</h2>
-                <button class="btn btn-danger btn-custom">Оформить заявку</button>
+                <button class="btn btn-danger btn-custom" data-modal="open">Оформить заявку</button>
             </div>
         </div>
     </section>
@@ -271,7 +271,7 @@
                         </li>
                     </ul>
                     <div class="section-footer text-center">
-                        <button class="btn btn-custom mx-auto">Заказать услугу</button>
+                        <button class="btn btn-custom mx-auto" data-modal="open">Заказать услугу</button>
                     </div>
                 </div>
             </div>
@@ -464,64 +464,66 @@
             </div>
         </div>
     </section>
-    <footer class="footer" id="contacts">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="">
-                    <div class="footer-title">
-                        <h5>контакты</h5>
-                    </div>
-                    <ul class="footer-list list">
-                        <div class="contacts">
-                            <div class="info contacts-address">
-                                <p>7392 W Belt Line Rd, Round Rock</p>
-                                <p>2464 Valley View Ln, Coppell</p>
-                            </div>
-                            <div class="info contacts-phone">
-                                <p><a href="tel:+79123456789">8 912 345 67 89</a></p>
-                                <p><a href="mailto:info@example.com">info@autodopspb.ru</a></p>
-                            </div>
-                            <div class="contacts-socials">
-
-                            </div>
-                        </div>
-                    </ul>
-                </div>
-                <div class="">
-                    <div class="row footer-title">
-                        <h5>ссылки</h5>
-                    </div>
-                    <div class="row">
-                        <ul class="col-6 footer-list list">
-                            <li><a class="scroll" href="#about">О нас</a></li>
-                            <li><a class="scroll" href="#products">Услуги и цены</a></li>
-                            <li><a class="scroll" href="#portfolio">Галерея работ</a></li>
-                        </ul>
-                        <ul class="col-6 footer-list list">
-                            <li><a class="scroll" href="#feedback">Отзывы</a></li>
-                            <li><a class="scroll" href="#contacts">Контакты</a></li>
-                            <li><a class="open-modal" href="javascript:void(0)">Политика<br>конфиденциальности</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-                <div class="">
-                    <div class="footer-title">
-                        <h5>действия</h5>
-                    </div>
-                    <ul class="footer-list list">
-                        <li><a class="open-modal" href="javascript:void(0)">Записаться на прием</a></li>
-                        <li><a class="open-modal" href="javascript:void(0)">Заказать обратный звонок</a></li>
-                        <li><a class="open-modal" href="javascript:void(0)">Узнать, где мы</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
 </main>
 
-<div class="modal d-none" id="modal">
-    <form class="section modal-form col-8">
+<footer class="footer" id="contacts">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="">
+                <div class="footer-title">
+                    <h5>контакты</h5>
+                </div>
+                <ul class="footer-list list">
+                    <div class="contacts">
+                        <div class="info contacts-address">
+                            <p>наб. Обводного канала, 64к2</p>
+                            <p>ул. Лужская, 3к2</p>
+                        </div>
+                        <div class="info contacts-phone">
+                            <p><a class="tel" href="tel:+79119114981">8 911 911 49 81</a></p>
+                            <p><a href="mailto:info@example.com">info@autodopspb.ru</a></p>
+                        </div>
+                        <div class="contacts-socials">
+
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <div class="">
+                <div class="row footer-title">
+                    <h5>ссылки</h5>
+                </div>
+                <div class="row">
+                    <ul class="col-6 footer-list list">
+                        <li><a class="scroll" href="#about">О нас</a></li>
+                        <li><a class="scroll" href="#products">Услуги и цены</a></li>
+                        <li><a class="scroll" href="#portfolio">Галерея работ</a></li>
+                    </ul>
+                    <ul class="col-6 footer-list list">
+                        <li><a class="scroll" href="#feedback">Отзывы</a></li>
+                        <li><a class="scroll" href="#contacts">Контакты</a></li>
+                        <li><a class="open-modal" href="javascript:void(0)">Политика<br>конфиденциальности</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="">
+                <div class="footer-title">
+                    <h5>действия</h5>
+                </div>
+                <ul class="footer-list list">
+                    <li><a class="open-modal" href="javascript:void(0)">Записаться на прием</a></li>
+                    <li><a class="open-modal" href="javascript:void(0)">Заказать обратный звонок</a></li>
+                    <li><a class="open-modal" href="javascript:void(0)">Узнать, где мы</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="modal d-none" id="modal" data-modal="close">
+    <form class="section modal-form col-8 animated fadeInDown">
+        <span class="modal-form__close" data-modal="close"></span>
         <div class="container">
             <div class="section-header">
                 <h3 class="text-center">Получить расчет</h3>
@@ -563,7 +565,7 @@
                 </div>
             </div>
             <div class="modal-form__submit col-6 mx-auto">
-                <input type="submit" disabled class="btn btn-custom btn-block mx-auto mb-3" value="Отправить заявку">
+                <input type="submit" class="btn btn-custom btn-block mx-auto mb-3" value="Отправить заявку">
                 <div>
                     <label class="checkbox">
                         <input class="checkbox-input" type="checkbox" checked>
@@ -581,7 +583,7 @@
 <script src="js/image-comparison-slider.min.js"></script>
 <script src="js/filters.js"></script>
 <script src="js/scrolling.js"></script>
-<script src="database/carBrands.json"></script>
 <script src="js/modal-options.js"></script>
+<script src="js/modal.js"></script>
 </body>
 </html>
