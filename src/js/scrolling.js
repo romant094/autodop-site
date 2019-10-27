@@ -1,5 +1,4 @@
 const links = document.querySelectorAll('a.scroll');
-console.log(links);
 
 links.forEach(link => {
     link.addEventListener('click', e => {

@@ -14,8 +14,8 @@ const dist = './dist';
 const path = {
     src: {
         scss: src + '/scss',
-        img: src + '/img',
-        js: src + '/js'
+        img: src + '/img/*',
+        js: src + '/js/*'
     },
     dist: {
         css: dist + '/css',
@@ -67,6 +67,10 @@ gulp.task('watcher', () => {
 gulp.task('build', gulp.series('scss', 'js', 'images', done => {
     done()
 }));
+
+gulp.task('clear', () =>
+    cache.clearAll()
+);
 
 gulp.task('default', gulp.series('scss', 'js', 'images', 'watcher'), done => {
     done();

@@ -1,67 +1,73 @@
-class Slider {
-    constructor(selector, autoplay = true, type) {
-        this.sliderContainer = document.querySelector(selector);
-        this.sliderContent = this.sliderContainer.querySelector('.slider-content img');
-        this.type = type;
-        this.slides = this.type === 1 ? this.sliderContainer.querySelectorAll('.slider-nav li') : this.sliderContainer.querySelectorAll('.slider-content__people .person');
-        this.prevArrow = this.sliderContainer.querySelector('.slider-arrow--prev');
-        this.nextArrow = this.sliderContainer.querySelector('.slider-arrow--next');
-        this.slidesCount = this.slides.length;
-        this.activeSlide = 0;
-        this.autoplay = autoplay;
-        this.interval = 2500;
+class SliderFeedback {
+    constructor(selector, data, autoplay = false) {
+        if (autoplay) {
+            this.startAutoplay();
+        }
+
+        this.state.slides = data.map((item, i) => ({...item, id: i}));
+        this.images = document.querySelectorAll(`${selector} .person-photo`);
+        this.text = document.querySelector(`${selector} .slider-content__text`);
+        this.name = document.querySelector(`${selector} .slider-content__name`);
+        this.nextArrow = document.querySelector(`${selector} #next-arrow svg`);
+        this.prevArrow = document.querySelector(`${selector} #prev-arrow svg`);
+        this.arrows = [this.nextArrow, this.prevArrow];
+        this.functions = [this.prevSlide, this.nextSlide];
+        this.cutSlides();
+        this.renderSlider();
+        this.addListeners();
     }
 
+    state = {
+        slides: [],
+        tickTime: 3000,
+        visibleSlides: [],
+        shiftSlide: {}
+    };
+
     nextSlide = () => {
-        if (this.activeSlide === this.slidesCount - 1) {
-            this.activeSlide = 0
-        } else {
-            this.activeSlide++
-        }
-        this.showCurrentSlide();
+        this.cutSlides();
+        this.state.shiftSlide = this.state.slides.shift();
+        this.setState('slides', [...this.state.slides, this.state.shiftSlide]);
+        this.renderSlider();
     };
 
     prevSlide = () => {
-        if (this.activeSlide === 0) {
-            this.activeSlide = this.slidesCount - 1
-        } else {
-            this.activeSlide--
-        }
-        this.showCurrentSlide();
+        this.cutSlides();
+        this.state.shiftSlide = this.state.slides.pop();
+        this.setState('slides', [this.state.shiftSlide, ...this.state.slides]);
+        this.renderSlider();
     };
 
-    addListener = () => {
-        if (this.type === 2) {
-            this.prevArrow.addEventListener('click', this.prevSlide);
-            this.nextArrow.addEventListener('click', this.nextSlide);
-        }
+    setState = (state, newValue) => this.state[state] = newValue;
 
-        if (this.autoplay) {
-            setInterval(this.nextSlide, this.interval);
+    startAutoplay = () => this.state.intervalId = setInterval(this.nextSlide, this.state.tickTime);
+
+    stopAutoplay = () => clearInterval(this.state.intervalId);
+
+    cutSlides = () => this.state.visibleSlides = this.state.slides.map((item, i) => {
+        if (i < 5) {
+            return Object.assign({}, item)
         }
+    });
+
+    addListeners = () => {
+        this.arrows.forEach((arrow, i) => arrow.addEventListener('click', this.functions[i]))
     };
 
-    showCurrentSlide = () => console.log(this.activeSlide);
-
-    renderSlides = () => {
-        this.slides.forEach(slide => slide.classList.remove('active'));
-        this.slides[this.activeSlide].classList.add('active');
+    renderSlider = () => {
+        this.images.forEach((img, i) => img.src = this.state.visibleSlides[i].img);
+        this.text.textContent = this.state.visibleSlides[2].text;
+        this.name.textContent = this.state.visibleSlides[2].name;
     };
-
-    showInfo = () => {
-        console.log(this.slides)
-        console.log('slidesCount ', this.slidesCount)
-        console.log('activeSlide', this.activeSlide)
-    }
 }
 
-class Slider1 {
+class SliderAbout {
     constructor(selector) {
         this.sliderContainer = document.querySelector(selector);
         this.sliderContent = this.sliderContainer.querySelector('.slider-content img');
         this.slides = this.sliderContainer.querySelectorAll('.slider-nav li');
         this.activeSlide = 0;
-        this.currecntSlideImg = this.slides[this.activeSlide].querySelector('img');
+        this.currentSlideImg = this.slides[this.activeSlide].querySelector('img');
     }
 
     addListener = () => {
@@ -84,14 +90,10 @@ class Slider1 {
                     this.toggleActiveClass(this.activeSlide, 'remove');
                     this.activeSlide = i;
                     this.toggleActiveClass(i, 'add');
-                    this.currecntSlideImg = this.slides[this.activeSlide].querySelector('img');
-                    this.sliderContent.src = this.currecntSlideImg.src;
+                    this.currentSlideImg = this.slides[this.activeSlide].querySelector('img');
+                    this.sliderContent.src = this.currentSlideImg.src;
                 }
             });
         });
     };
 }
-
-const sl = new Slider1('#slider-about', false);
-
-sl.addListener();
