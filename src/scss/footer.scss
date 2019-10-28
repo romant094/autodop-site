@@ -1,9 +1,13 @@
 .footer {
   background-color: $black-secondary;
-  padding: 70px 0;
+  position: relative;
 
   a {
     color: $white;
+  }
+
+  &-info{
+    padding: 70px 0;
   }
 
   &-title {
@@ -78,5 +82,15 @@
         top: 10px !important;
       }
     }
+  }
+
+  #map{
+    position: absolute;
+    //height: 400px;
+    width: 50%;
+    margin: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
   }
 }

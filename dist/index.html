@@ -468,56 +468,54 @@
 
 <footer class="footer" id="contacts">
     <div class="container">
-        <div class="row justify-content-between">
-            <div class="">
-                <div class="footer-title">
-                    <h5>контакты</h5>
-                </div>
-                <ul class="footer-list list">
-                    <div class="contacts">
-                        <div class="info contacts-address">
-                            <p>наб. Обводного канала, 64к2</p>
-                            <p>ул. Лужская, 3к2</p>
-                        </div>
-                        <div class="info contacts-phone">
-                            <p><a class="tel" href="tel:+79119114981">8-911-911-49-81</a></p>
-                            <p><a href="mailto:info@example.com">info@autodopspb.ru</a></p>
-                        </div>
-                        <div class="contacts-socials">
-
-                        </div>
+        <div class="footer-info">
+            <div class="footer-title">
+                <h5>контакты</h5>
+            </div>
+            <ul class="footer-list list">
+                <div class="contacts">
+                    <div class="info contacts-address">
+                        <p>наб. Обводного канала, 64к2</p>
+                        <p>ул. Лужская, 3к2</p>
                     </div>
-                </ul>
-            </div>
-            <div class="">
-                <div class="row footer-title">
-                    <h5>ссылки</h5>
-                </div>
-                <div class="row">
-                    <ul class="col-6 footer-list list">
-                        <li><a class="scroll" href="#about">О нас</a></li>
-                        <li><a class="scroll" href="#products">Услуги и цены</a></li>
-                        <li><a class="scroll" href="#portfolio">Галерея работ</a></li>
-                    </ul>
-                    <ul class="col-6 footer-list list">
-                        <li><a class="scroll" href="#feedback">Отзывы</a></li>
-                        <li><a class="scroll" href="#contacts">Контакты</a></li>
-                        <li><a class="open-modal" href="javascript:void(0)">Политика<br>конфиденциальности</a></li>
-                    </ul>
-                </div>
+                    <div class="info contacts-phone">
+                        <p><a class="tel" href="tel:+79119114981">8-911-911-49-81</a></p>
+                        <p><a href="mailto:info@example.com">info@autodopspb.ru</a></p>
+                    </div>
+                    <div class="contacts-socials">
 
-            </div>
-            <div class="">
-                <div class="footer-title">
-                    <h5>действия</h5>
+                    </div>
                 </div>
-                <ul class="footer-list list">
-                    <li><a class="open-modal" href="javascript:void(0)">Записаться на прием</a></li>
-                    <li><a class="open-modal" href="javascript:void(0)">Заказать обратный звонок</a></li>
-                </ul>
-            </div>
+            </ul>
         </div>
+        <!--            <div class="">-->
+        <!--                <div class="row footer-title">-->
+        <!--                    <h5>ссылки</h5>-->
+        <!--                </div>-->
+        <!--                <div class="row">-->
+        <!--                    <ul class="col-6 footer-list list">-->
+        <!--                        <li><a class="scroll" href="#about">О нас</a></li>-->
+        <!--                        <li><a class="scroll" href="#products">Услуги и цены</a></li>-->
+        <!--                        <li><a class="scroll" href="#portfolio">Галерея работ</a></li>-->
+        <!--                    </ul>-->
+        <!--                    <ul class="col-6 footer-list list">-->
+        <!--                        <li><a class="scroll" href="#feedback">Отзывы</a></li>-->
+        <!--                        <li><a class="scroll" href="#contacts">Контакты</a></li>-->
+        <!--                        <li><a class="open-modal" href="javascript:void(0)">Политика<br>конфиденциальности</a></li>-->
+        <!--                    </ul>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--                                <div class="">-->
+        <!--                                    <div class="footer-title">-->
+        <!--                                        <h5>действия</h5>-->
+        <!--                                    </div>-->
+        <!--                                    <ul class="footer-list list">-->
+        <!--                                        <li><a class="open-modal" href="javascript:void(0)">Записаться на прием</a></li>-->
+        <!--                                        <li><a class="open-modal" href="javascript:void(0)">Заказать обратный звонок</a></li>-->
+        <!--                                    </ul>-->
+        <!--                                </div>-->
     </div>
+    <div class="" id="map"></div>
 </footer>
 
 <div class="modal d-none" id="modal" data-modal="close">
@@ -625,6 +623,9 @@
     const slider = new SliderFeedback('#slider-feedback', data, true);
 
 </script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=15a6f0aa-8fae-4588-a2a7-5580f0733cc8"
+        type="text/javascript"></script>
+<script src="js/yandex-map.js"></script>
 
 </body>
 </html>
