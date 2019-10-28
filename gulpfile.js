@@ -25,7 +25,7 @@ const path = {
 };
 
 gulp.task('scss', (done) => {
-    gulp.src(path.src.scss + '/**/styles.scss')
+    gulp.src(path.src.scss + '/styles.scss')
         .pipe(plumber())
         .pipe(sass({
             outputStyle: 'compact'
@@ -35,7 +35,7 @@ gulp.task('scss', (done) => {
 });
 
 gulp.task('images', (done) => {
-    gulp.src(path.src.img + '/*')
+    gulp.src([path.src.img, path.src.img + '/*'])
         .pipe(plumber())
         .pipe(cache(imagemin([
             imagemin.gifsicle({interlaced: true}),
@@ -52,7 +52,7 @@ gulp.task('images', (done) => {
 });
 
 gulp.task('js', (done) => {
-    gulp.src(path.src.js + '/*')
+    gulp.src(path.src.js + '/**/*')
         .pipe(plumber())
         .pipe(gulp.dest(path.dist.js));
     done();
