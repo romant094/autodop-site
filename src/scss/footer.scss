@@ -6,7 +6,7 @@
     color: $white;
   }
 
-  &-info{
+  &-info {
     padding: 70px 0;
   }
 
@@ -52,39 +52,60 @@
   .contacts {
     .info {
       position: relative;
-      padding-left: 59px;
+      padding-left: 38px;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
 
       &::before {
         display: block;
         content: "";
         position: absolute;
         left: 0;
-        top: 2px;
+        top: 5px;
         background-size: contain;
+        background-position: top 0 left 0;
+        background-repeat: no-repeat;
       }
     }
 
     &-address {
-      margin-bottom: 20px;
-
       &::before {
-        background: url("../img/footer-geo.png") top 0 left 0 no-repeat;
-        width: 32px;
-        height: 46px;
+        background-image: url("../img/footer-geo.png");
+        width: 18px;
+        height: 26px;
+      }
+    }
+
+    &-time {
+      &::before {
+        background-image: url("../img/footer-time.png");
+        width: 18px;
+        height: 18px;
       }
     }
 
     &-phone {
       &::before {
-        background: url("../img/footer-phone.png") top 0 left 0 no-repeat;
-        width: 35px;
-        height: 35px;
-        top: 10px !important;
+        background-image: url("../img/footer-phone.png");
+        width: 18px;
+        height: 18px;
+        top: 2px !important;
+      }
+    }
+
+    &-mail {
+      &::before {
+        background-image: url("../img/footer-mail.png");
+        width: 18px;
+        height: 16px;
+        top: 3px !important;
       }
     }
   }
 
-  #map{
+  #map {
     position: absolute;
     //height: 400px;
     width: 50%;
