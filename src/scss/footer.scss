@@ -63,7 +63,7 @@
         content: "";
         position: absolute;
         left: 0;
-        top: 5px;
+        top: 4px;
         background-size: contain;
         background-position: top 0 left 0;
         background-repeat: no-repeat;
@@ -101,6 +101,34 @@
         width: 18px;
         height: 16px;
         top: 3px !important;
+      }
+    }
+
+    &-socials, &-tech {
+      padding-left: 0 !important;
+
+      &::before {
+        display: none !important;
+      }
+    }
+
+    &-socials {
+      a {
+        svg {
+          transition: all 0.3s;
+
+          &:hover{
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+
+    .askque-link{
+      text-decoration: underline;
+      transition: all 0.3s;
+      &:hover{
+        color: lighten($color-primary-1, 25%);
       }
     }
   }

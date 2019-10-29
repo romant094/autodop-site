@@ -52,7 +52,7 @@ gulp.task('images', (done) => {
 });
 
 gulp.task('js', (done) => {
-    gulp.src(path.src.js + '/**/*')
+    gulp.src([path.src.js, path.src.js + '/*'])
         .pipe(plumber())
         .pipe(gulp.dest(path.dist.js));
     done();
