@@ -103,7 +103,9 @@
     &-item {
       padding: 17px 0;
       margin-right: 54px;
-
+      @media screen and (max-width: 991px) {
+        margin-right: 28px;
+      }
       &:last-child {
         margin-right: 0;
       }
@@ -113,7 +115,9 @@
       color: $white;
       font-size: 18px;
       padding: 0;
-
+      @media screen and (max-width: 991px) {
+        font-size: 16px;
+      }
       &:hover {
         text-decoration: underline;
       }
