@@ -1,18 +1,29 @@
 .top {
   padding: 158px 0;
+
+
+  background: url("../img/top-bg.png") center right no-repeat, $black-secondary;
+  @media screen and (max-width: 1199px) {
+    padding: 120px 0;
+    background-size: 100%;
+    background-position: right bottom;
+  }
   @media screen and (max-width: 575px){
     padding: 100px 0;
     background: $black-secondary;
   }
-
-  background: url("../img/top-bg.png") center right no-repeat, $black-secondary;
-
   h1 {
     font-weight: bold;
     font-size: 64px;
     line-height: 100%;
     margin-bottom: 20px;
     color: $grey-primary;
+    @media screen and (max-width: 991px) {
+      font-size: 50px;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 40px;
+    }
   }
 
   h2 {
@@ -20,6 +31,11 @@
     line-height: 100%;
     margin-bottom: 30px;
     color: $grey-primary;
+    @media screen and (max-width: 991px) {
+      font-size: 26px;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 20px;
+    }
   }
-
 }

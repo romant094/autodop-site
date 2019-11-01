@@ -3,7 +3,7 @@
     //max-width: 276px;
     display: flex;
     align-items: center;
-
+    margin-bottom: 30px;
     &-number{
       border-radius: 100px;
       min-width: 50px;
@@ -20,6 +20,9 @@
     }
     &-text{
       min-width: 194px;
+      @media screen and (max-width: 991px) {
+        min-width: 154px;
+      }
     }
   }
 }

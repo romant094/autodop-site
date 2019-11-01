@@ -1,14 +1,35 @@
 .about {
+  &-cards {
+    @media screen and (max-width: 575px) {
+      flex-wrap: wrap;
+    }
+  }
   &-card {
+    @media screen and (max-width: 575px) {
+      width: 50%;
+      margin-bottom: 20px;
+    }
     &__header {
       font-weight: bold;
       font-size: 48px;
       line-height: 100%;
+      @media screen and (max-width: 767px) {
+        font-size: 40px;
+      }
+
     }
 
     &__text {
       font-size: 18px;
       line-height: 100%;
+      @media screen and (max-width: 767px) {
+        font-size: 15px;
+      }
     }
+  }
+}
+.slider-about {
+  @media screen and (max-width: 991px) {
+    margin-top: 32px;
   }
 }
