@@ -145,5 +145,10 @@
     right: 0;
     top: 0;
     bottom: 0;
+    @media screen and (max-width: 575px) {
+      position: static;
+      height: 350px;
+      width: 100%;
+    }
   }
 }
