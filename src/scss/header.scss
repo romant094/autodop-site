@@ -11,9 +11,10 @@
 
   &-logo {
     display: inline-block;
-    img{
+
+    img {
       display: block;
-      width: 156px;
+      width: 120px;
       height: auto;
     }
   }
@@ -21,70 +22,93 @@
   &-info {
     padding: 15px 0;
     background-color: $grey-primary;
+
+    &__contacts {
+      .info {
+        position: relative;
+        padding-left: 30px;
+
+        @media screen and (max-width: 575px) {
+          padding-left: 0;
+        }
+
+        &:before {
+          position: absolute;
+          display: block;
+          background-size: cover;
+          content: "";
+          background-repeat: no-repeat;
+          background-position: left 0 top 0;
+          left: 0;
+        }
+      }
+
+      .address {
+        &:before {
+          width: 17px;
+          height: 25px;
+          background-image: url("../img/header-geo.svg");
+          top: 10px;
+        }
+      }
+
+      .time {
+        &:before {
+          width: 16px;
+          height: 16px;
+          background-image: url("../img/header-time.svg");
+          top: 12px;
+        }
+      }
+
+      .phone {&:before{
+        width: 16px;
+        height: 16px;
+        background-image: url("../img/header-phone.svg");
+        top: 4px;
+      }
+
+
+        @media screen and (max-width: 575px) {
+          a{
+            font-size: 30px !important;
+          }
+          &:before {
+            display: none;
+          }
+        }
+
+        a {
+          font-size: 18px;
+          font-weight: bold;
+          color: $black-primary;
+
+        }
+      }
+
+      p {
+        &:first-child {
+          margin-bottom: 15px;
+        }
+      }
+    }
   }
 
-  .contacts {
-    &-address {
-      position: relative;
-
-      &:before {
-        position: absolute;
-        display: block;
-        width: 25px;
-        height: 36px;
-        left: -45px;
-        top: 3px;
-        background: url("../img/header-geo.png") left 0 top 0 no-repeat;
-        background-size: cover;
-        content: "";
-      }
-    }
-
-    &-phone {
-      position: relative;
-      padding-left: 110px;
-
-      .tel{
-        font-size: 18px;
-        font-weight: bold;
-      }
-
-      &:before {
-        position: absolute;
-        display: block;
-        width: 30px;
-        height: 30px;
-        left: 50px;
-        top: 6px;
-        background: url("../img/header-phone.png") left 0 top 0 no-repeat;
-        background-size: cover;
-        content: "";
-      }
-
-      a{
-        color: $black-primary;
-      }
-    }
-
-    p {
-      &:first-child {
-        margin-bottom: 15px;
-      }
-    }
-  }
-
-  .navbar{
+  .navbar {
     padding: 0;
     @include bg-gradient;
   }
+
   .nav {
-    &-item{
+    &-item {
       padding: 17px 0;
       margin-right: 54px;
-      &:last-child{
+
+      &:last-child {
         margin-right: 0;
       }
     }
+
     &-link {
       color: $white;
       font-size: 18px;
@@ -94,5 +118,48 @@
         text-decoration: underline;
       }
     }
+  }
+}
+
+#burger-menu{
+  cursor: pointer;
+  margin-left: -15px;
+
+  .ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .hamRotate.active {
+    transform: rotate(45deg);
+  }
+
+  .line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: $grey-primary;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+  }
+
+  .ham4 .top {
+    stroke-dasharray: 40 121;
+  }
+
+  .ham4 .bottom {
+    stroke-dasharray: 40 121;
+  }
+
+  .ham4.active .top {
+    stroke-dashoffset: -68px;
+  }
+
+  .ham4.active .bottom {
+    stroke-dashoffset: -68px;
   }
 }

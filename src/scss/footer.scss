@@ -63,7 +63,6 @@
         content: "";
         position: absolute;
         left: 0;
-        top: 4px;
         background-size: contain;
         background-position: top 0 left 0;
         background-repeat: no-repeat;
@@ -75,6 +74,7 @@
         background-image: url("../img/footer-geo.png");
         width: 18px;
         height: 26px;
+        top: 4px;
       }
     }
 
@@ -83,6 +83,7 @@
         background-image: url("../img/footer-time.png");
         width: 18px;
         height: 18px;
+        top: 4px;
       }
     }
 
@@ -91,7 +92,7 @@
         background-image: url("../img/footer-phone.png");
         width: 18px;
         height: 18px;
-        top: 2px !important;
+        top: 2px;
       }
     }
 
@@ -100,7 +101,7 @@
         background-image: url("../img/footer-mail.png");
         width: 18px;
         height: 16px;
-        top: 3px !important;
+        top: 3px;
       }
     }
 
