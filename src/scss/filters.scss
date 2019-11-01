@@ -23,6 +23,9 @@
     margin-bottom: 50px;
 
     &__item{
+      @media screen and (max-width: 991px) {
+        margin-bottom: 20px;
+      }
       img{
         @include border-radius-5;
         @include shadow;
