@@ -14,7 +14,19 @@
     <div class="header-info">
         <div class="container">
             <div class="d-flex row justify-content-between align-items-center">
-                <div class="header-info__logo col-xl-5 col-lg-4 col-md-2 col-4">
+                <div class="col-1 d-md-none">
+                    <span id="burger-menu">
+                        <svg class="ham hamRotate ham4" viewBox="0 0 100 100" width="60"
+                             onclick="this.classList.toggle('active')">
+                            <path class="line top"
+                                  d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+                            <path class="line middle" d="m 70,50 h -40" />
+                            <path class="line bottom"
+                                  d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+                        </svg>
+                    </span>
+                </div>
+                <div class="header-info__logo col-xl-5 col-lg-4 col-md-2 col-3">
                     <a class="header-logo" href="#">
                         <img loading="lazy" src="img/logo.png" alt="Автодоп">
                     </a>
@@ -35,20 +47,9 @@
             </div>
         </div>
     </div>
-    <nav class="navbar pt-3 pb-3 p-md-0">
+    <nav class="navbar pt-3 pb-3 p-md-0 d-none d-md-block">
         <div class="container">
-            <span class="d-md-none" id="burger-menu">
-                <svg class="ham hamRotate ham4" viewBox="0 0 100 100" width="60"
-                     onclick="this.classList.toggle('active')">
-                    <path class="line top"
-                          d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
-                    <path class="line middle" d="m 70,50 h -40" />
-                    <path class="line bottom"
-                          d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
-                </svg>
-            </span>
-
-            <ul class="nav d-none d-md-flex">
+            <ul class="nav d-flex">
                 <li class="nav-item">
                     <a href="#about" class="nav-link scroll">О нас</a>
                 </li>
@@ -605,6 +606,29 @@
             </div>
         </div>
     </form>
+</div>
+
+<div class="menu animated fadeInRight" id="mobile-menu">
+    <ul class="menu-list list">
+        <li class="menu-list__item">
+            <a href="#about" class="nav-link scroll">О нас</a>
+        </li>
+        <li class="menu-list__item">
+            <a href="#products" class="nav-link scroll">Услуги и цены</a>
+        </li>
+        <li class="menu-list__item">
+            <a href="#steps" class="nav-link scroll">Этапы работы</a>
+        </li>
+        <li class="menu-list__item">
+            <a href="#portfolio" class="nav-link scroll">Галерея работ</a>
+        </li>
+        <li class="menu-list__item">
+            <a href="#feedback" class="nav-link scroll">Отзывы</a>
+        </li>
+        <li class="menu-list__item">
+            <a href="#contacts" class="nav-link scroll">Контакты</a>
+        </li>
+    </ul>
 </div>
 
 <script src="js/tabs.js"></script>

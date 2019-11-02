@@ -81,7 +81,7 @@
     .section-header {
       @media screen and (max-width: 991px) {
         margin-bottom: 35px;
-        
+
       }
       h3 {
         @media screen and (max-width: 991px) {
@@ -95,6 +95,33 @@
         }
       }
     }
-    
+
+  }
+}
+
+.menu{
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $white;
+  width: 70%;
+  &-list{
+    padding-top: 50px;
+
+    &__item{
+      &:hover{
+        @include bg-gradient;
+        .nav-link{
+          color: $white;
+        }
+      }
+
+      .nav-link{
+        font-size: 20px;
+        color: $black-primary;
+      }
+    }
   }
 }
