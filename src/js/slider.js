@@ -24,14 +24,14 @@ class SliderFeedback {
         shiftSlide: {}
     };
 
-    nextSlide = () => {
+    prevSlide = () => {
         this.cutSlides();
         this.state.shiftSlide = this.state.slides.shift();
         this.setState('slides', [...this.state.slides, this.state.shiftSlide]);
         this.renderSlider();
     };
 
-    prevSlide = () => {
+    nextSlide = () => {
         this.cutSlides();
         this.state.shiftSlide = this.state.slides.pop();
         this.setState('slides', [this.state.shiftSlide, ...this.state.slides]);

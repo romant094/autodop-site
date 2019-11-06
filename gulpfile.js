@@ -7,6 +7,8 @@ const plumber = require('gulp-plumber');
 const jpegrecompress = require('imagemin-jpeg-recompress');
 const pngquant = require('imagemin-pngquant');
 const cache = require('gulp-cache');
+const sourcemaps = require('gulp-sourcemaps');
+const concat = require('gulp-concat');
 
 const src = './src';
 const dist = './dist';
@@ -52,8 +54,11 @@ gulp.task('images', (done) => {
 });
 
 gulp.task('js', (done) => {
-    gulp.src([path.src.js, path.src.js + '/*'])
+    gulp.src(path.src.js)
         .pipe(plumber())
+        .pipe(sourcemaps.init())
+        .pipe(concat('bundle.js'))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(path.dist.js));
     done();
 });

@@ -170,10 +170,10 @@
                 </div>
                 <form class="d-flex row" action="#">
                     <div class="col-lg-4 col-sm-6 col-12">
-                        <input class="form-control" type="text" placeholder="Как к вам обращаться">
+                        <input class="form-control" type="text" placeholder="Как к вам обращаться" name="name">
                     </div>
                     <div class="col-lg-4 col-sm-6 col-12">
-                        <input class="form-control" type="text" placeholder="Ваш контактный номер" data-input="masked">
+                        <input class="form-control" type="text" placeholder="Ваш контактный номер" data-input="masked" name="phone">
                     </div>
                     <div class="col-lg-4 col-12">
                         <input class="btn btn-custom btn-block" type="submit" value="Отправить форму">
@@ -416,7 +416,7 @@
                         </div>
                         <div class="slider-content col-10">
                             <div class="slider-content__people row justify-content-between mb-20">
-                                <div class="col-2 person person--3">
+                                <div class="col-2 person person--3 d-none d-sm-flex">
                                     <img loading="lazy" class="person-photo" src="img/feedback/1.png" alt="1">
                                 </div>
                                 <div class="col-2 person person--2">
@@ -428,7 +428,7 @@
                                 <div class="col-2 person person--2">
                                     <img loading="lazy" class="person-photo" src="img/feedback/4.png" alt="4">
                                 </div>
-                                <div class="col-2 person person--3">
+                                <div class="col-2 person person--3 d-none d-sm-flex">
                                     <img loading="lazy" class="person-photo" src="img/feedback/5.png" alt="5">
                                 </div>
                             </div>
@@ -608,7 +608,7 @@
     </form>
 </div>
 
-<div class="menu animated fadeInRight" id="mobile-menu">
+<div class="menu animated fadeInRight d-none" id="mobile-menu">
     <ul class="menu-list list">
         <li class="menu-list__item">
             <a href="#about" class="nav-link scroll">О нас</a>
@@ -631,13 +631,9 @@
     </ul>
 </div>
 
-<script src="js/tabs.js"></script>
-<script src="js/slider.js"></script>
-<script src="js/image-comparison-slider.min.js"></script>
-<script src="js/filters.js"></script>
-<script src="js/scrolling.js"></script>
-<script src="js/modal-options.js"></script>
-<script src="js/modal.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=15a6f0aa-8fae-4588-a2a7-5580f0733cc8"
+        type="text/javascript"></script>
+<script src="js/bundle.js"></script>
 <script>
     (new SliderAbout('#slider-about', false)).addListener();
     // const imp = (input) => input.value.replace('^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$', '');
@@ -675,11 +671,7 @@
     ];
 
     const slider = new SliderFeedback('#slider-feedback', data, true);
-
 </script>
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=15a6f0aa-8fae-4588-a2a7-5580f0733cc8"
-        type="text/javascript"></script>
-<script src="js/yandex-map.js"></script>
 <script>
     window.addEventListener('resize', () => console.log(window.innerWidth));
 </script>
