@@ -40,12 +40,18 @@
             max-width: 120px;
             @include shadow;
             border-radius: 100px;
+            @media screen and (max-width: 991px) {
+              width: 120px;
+            }
+            @media screen and (max-width: 767px) {
+              width: 98px;
+            }
             @media screen and (max-width: 575px) {
               max-width: none;
-              width: 80px;
+              width: 110px;
             }
             @media screen and (max-width: 479px) {
-              width: 60px;
+              width: 90px;
             }
           }
 
@@ -57,7 +63,7 @@
           img {
             max-width: 80px;
             margin: 0;
-            @media screen and (max-width: 575px) {
+            @media screen and (max-width: 767px) {
               max-width: 70px;
             }
             @media screen and (max-width: 479px) {
