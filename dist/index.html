@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
 <header class="header">
     <div class="header-decor"></div>
     <div class="header-info">
@@ -168,12 +167,13 @@
                     <h4>Закажите</h4>
                     <h3>Расчет стоимости</h3>
                 </div>
-                <form class="d-flex row" action="#">
+                <form class="d-flex row" action="mail.php" method="POST">
                     <div class="col-lg-4 col-sm-6 col-12">
-                        <input class="form-control" type="text" placeholder="Как к вам обращаться" name="name">
+                        <input class="form-control" type="text" placeholder="Как к вам обращаться" name="name" required>
                     </div>
                     <div class="col-lg-4 col-sm-6 col-12">
-                        <input class="form-control" type="text" placeholder="Ваш контактный номер" data-input="masked" name="phone">
+                        <input class="form-control" type="text" placeholder="Ваш контактный номер" data-input="masked"
+                               name="phone" required>
                     </div>
                     <div class="col-lg-4 col-12">
                         <input class="btn btn-custom btn-block" type="submit" value="Отправить форму">
@@ -336,12 +336,13 @@
                     <h4>Закажите</h4>
                     <h3>Расчет стоимости</h3>
                 </div>
-                <form class="d-flex row" action="#">
+                <form class="d-flex row" action="mail.php" method="POST">
                     <div class="col-lg-4 col-sm-6 col-12">
-                        <input class="form-control" type="text" placeholder="Как к вам обращаться">
+                        <input class="form-control" type="text" placeholder="Как к вам обращаться" required>
                     </div>
                     <div class="col-lg-4 col-sm-6 col-12">
-                        <input class="form-control" type="text" placeholder="Ваш контактный номер" data-input="masked">
+                        <input class="form-control" type="text" placeholder="Ваш контактный номер" data-input="masked"
+                               required>
                     </div>
                     <div class="col-lg-4 col-12">
                         <input class="btn btn-custom btn-block" type="submit" value="Отправить форму">
@@ -453,25 +454,26 @@
     <section class="section mainform">
         <div class="container">
             <div class="section-content section-content--mainform col-lg-5 col-md-7 col-12">
-                <form class="col-10 mx-auto" action="#">
+                <form class="col-10 mx-auto" action="mail.php" method="POST">
                     <div class="section-header">
                         <h4 class="mainform-header4">заполните форму</h4>
                         <h3 class="mainform-header3">Получите расчет</h3>
                     </div>
                     <div class="p-0 mb-20">
-                        <input class="form-control" type="text" placeholder="Как к вам обращаться">
+                        <input name="name" class="form-control" type="text" placeholder="Как к вам обращаться" required>
                     </div>
                     <div class="p-0 mb-30">
-                        <input class="form-control" type="text" placeholder="Как с вами тел" data-input="masked">
+                        <input name="phone" class="form-control" type="text" placeholder="Как с вами связаться"
+                               data-input="masked" required>
                     </div>
                     <div class="p-0 mb-15">
                         <input class="btn btn-block btn-custom" type="submit" value="Отправить заявку">
                     </div>
                     <div>
                         <label class="checkbox">
-                            <input class="checkbox-input" type="checkbox" checked>
+                            <input class="checkbox-input" type="checkbox" checked disabled>
                             <span class="checkbox-custom"></span>
-                            <span class="checkbox-text">Согласен с <a class="open-modal" href="javascript:void(0)">политикой конфиденциальности</a> и на обработку персональных данных</span>
+                            <span class="checkbox-text">Согласен с <a data-modal="policy" href="javascript:void(0)">политикой конфиденциальности</a> и на обработку персональных данных</span>
                         </label>
                     </div>
                 </form>
@@ -551,7 +553,7 @@
 </footer>
 
 <div class="modal d-none" id="modal" data-modal="close">
-    <form class="section modal-form col-sm-8 col-12 animated fadeInDown">
+    <form class="section modal-form col-sm-8 col-12 animated fadeInDown" action="mail.php" method="POST">
         <span class="modal-form__close" data-modal="close"></span>
         <div class="container">
             <div class="section-header">
@@ -559,35 +561,35 @@
             </div>
             <div class="row modal-form__line extra">
                 <div class="col-lg-6 col-12">
-                    <input name="" type="text" class="form-control" placeholder="Как к вам обращаться" required>
+                    <input name="name" type="text" class="form-control" placeholder="Как к вам обращаться" required>
                 </div>
                 <div class="col-lg-6 col-12">
-                    <input name="" type="text" class="form-control" placeholder="Укажите номер телефона" required
+                    <input name="phone" type="text" class="form-control" placeholder="Укажите номер телефона" required
                            data-input="masked">
                 </div>
             </div>
             <div class="row modal-form__line extra">
                 <div class="col-lg-6 col-12">
-                    <select name="" class="form-control" id="car-brand" required>
+                    <select name="car-brand" class="form-control" id="car-brand" required>
                         <option value="" selected hidden disabled>Марка автомобиля</option>
                     </select>
                 </div>
                 <div class="col-lg-6 col-12">
-                    <select name="" class="form-control" id="car-model" required>
+                    <select name="car-model" class="form-control" id="car-model" required>
                         <option value="" selected hidden disabled>Модель автомобиля</option>
                     </select>
                 </div>
             </div>
             <div class="row modal-form__line mb-4">
                 <div class="col-lg-6 col-12">
-                    <select name="" class="form-control" required>
+                    <select name="salon" class="form-control" required>
                         <option value="" selected hidden disabled>Выберите салон</option>
-                        <option value="1">наб. Обводного канала, 64к2</option>
-                        <option value="2">ул. Лужская, 3к2</option>
+                        <option value="наб. Обводного канала, 64к2">наб. Обводного канала, 64к2</option>
+                        <option value="ул. Лужская, 3к2">ул. Лужская, 3к2</option>
                     </select>
                 </div>
                 <div class="col-lg-6 col-12">
-                    <select name="" class="form-control" required>
+                    <select name="time" class="form-control" id="time" required>
                         <option value="" selected hidden disabled>Удобное время</option>
                         <option value="10:00">10:00</option>
                         <option value="10:30">10:30</option>
@@ -598,9 +600,9 @@
                 <input type="submit" class="btn btn-custom btn-block mx-auto mb-3" value="Отправить заявку">
                 <div>
                     <label class="checkbox">
-                        <input class="checkbox-input" type="checkbox" checked>
+                        <input class="checkbox-input" type="checkbox" checked disabled>
                         <span class="checkbox-custom"></span>
-                        <span class="checkbox-text">Согласен с&nbsp;<a class="open-modal" href="javascript:void(0)">политикой конфиденциальности</a> и&nbsp;на&nbsp;обработку персональных данных</span>
+                        <span class="checkbox-text">Согласен с&nbsp;<a data-modal="policy" href="javascript:void(0)">политикой конфиденциальности</a> и&nbsp;на&nbsp;обработку персональных данных</span>
                     </label>
                 </div>
             </div>
@@ -631,6 +633,20 @@
     </ul>
 </div>
 
+<div class="results d-none justify-content-center align-items-center">
+    <div class="results-content col-10 col-sm-6 col-lg-4 animated">
+        <div class="results-content__image">
+            <img class="mx-auto" src="img/loading.gif" alt="loading..." data-ajax="img">
+        </div>
+        <div class="results-content__header">
+            <h5 data-ajax="header">Пожалуйста, подождите</h5>
+        </div>
+        <div class="results-content__text">
+            <p data-ajax="text">Идет отправка...</p>
+        </div>
+    </div>
+</div>
+
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=15a6f0aa-8fae-4588-a2a7-5580f0733cc8"
         type="text/javascript"></script>
 <script src="js/bundle.js"></script>
@@ -644,9 +660,9 @@
 
     const data = [
         {
-            name: 'Иван Иванов',
-            text: 'Круто',
-            img: 'img/feedback/1.png'
+            name: 'Михаил Поляков',
+            text: 'Скола как будто и не было. Но я в шоке от покрытия Aquapel. Я за вчерашний день, а ездил по всему городу, не разу дворники не включал! Могу предположить, что стоимостью омывайки за пол зимы можно полностью отбить цену покрытия. Парни, спасибо вам огромное!',
+            img: 'https://sun9-57.userapi.com/c845323/v845323760/e60f9/fEHhh91IXpM.jpg?ava=1'
         },
         {
             name: 'Петр Петров',
@@ -670,10 +686,14 @@
         }
     ];
 
-    const slider = new SliderFeedback('#slider-feedback', data, true);
+    new SliderFeedback('#slider-feedback', data);
+
+    document
+        .querySelectorAll('form')
+        .forEach(form => sendForm(form));
 </script>
-<script>
-    window.addEventListener('resize', () => console.log(window.innerWidth));
-</script>
+<!--<script>-->
+<!--    window.addEventListener('resize', () => console.log(window.innerWidth));-->
+<!--</script>-->
 </body>
 </html>
