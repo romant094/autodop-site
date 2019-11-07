@@ -18,6 +18,6 @@
     "gulp:watch": "gulp",
     "build": "gulp build",
     "deploy": "yarn build && node deploy",
-    "gulp:clear": "gulp clear"
+    "project:clear": "gulp clear && rm -rf ./dist/js/ && rm -rf ./dist/css/ && rm -rf ./dist/img/"
   }
 }
