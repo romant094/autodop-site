@@ -10,6 +10,7 @@ const cache = require('gulp-cache');
 const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const connect = require('gulp-connect');
+const open = require('gulp-open');
 
 const src = './src';
 const dist = './dist';
@@ -33,6 +34,11 @@ gulp.task('connect', () => {
         livereload: true,
         port: 8888
     });
+});
+
+gulp.task('open', () => {
+    gulp.src('./')
+        .pipe(open({uri: 'http://localhost:8888'}));
 });
 
 gulp.task('scss', (done) => {
@@ -86,4 +92,4 @@ gulp.task('clear', () =>
     cache.clearAll()
 );
 
-gulp.task('default', gulp.series('scss', 'js', 'images', gulp.parallel('connect', 'watcher')), done => done());
+gulp.task('default', gulp.series('scss', 'js', 'images', gulp.parallel('connect', 'open', 'watcher')), done => done());
