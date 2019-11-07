@@ -51,12 +51,16 @@ class SliderFeedback {
     });
 
     addListeners = () => {
-        this.arrows.forEach((arrow, i) => arrow.addEventListener('click', this.functions[i]))
+        this.arrows.forEach((arrow, i) => arrow.addEventListener('click', ()=>{
+            this.functions[i]();
+            this.stopAutoplay();
+            this.startAutoplay();
+        }))
     };
 
     renderSlider = () => {
         this.images.forEach((img, i) => img.src = this.state.visibleSlides[i].img);
-        this.text.textContent = this.state.visibleSlides[2].text;
+        this.text.innerHTML = this.state.visibleSlides[2].text;
         this.name.textContent = this.state.visibleSlides[2].name;
     };
 }
