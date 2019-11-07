@@ -9,6 +9,7 @@ const pngquant = require('imagemin-pngquant');
 const cache = require('gulp-cache');
 const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
+const connect = require('gulp-connect');
 
 const src = './src';
 const dist = './dist';
@@ -26,13 +27,22 @@ const path = {
     }
 };
 
+gulp.task('connect', () => {
+    connect.server({
+        root: 'dist',
+        livereload: true,
+        port: 8888
+    });
+});
+
 gulp.task('scss', (done) => {
     gulp.src(path.src.scss + '/styles.scss')
         .pipe(plumber())
         .pipe(sass({
             outputStyle: 'compact'
         }).on('error', sass.logError))
-        .pipe(gulp.dest(path.dist.css));
+        .pipe(gulp.dest(path.dist.css))
+        .pipe(connect.reload());
     done();
 });
 
@@ -59,24 +69,21 @@ gulp.task('js', (done) => {
         .pipe(sourcemaps.init())
         .pipe(concat('bundle.js'))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(path.dist.js));
+        .pipe(gulp.dest(path.dist.js))
+        .pipe(connect.reload());
     done();
 });
 
 gulp.task('watcher', () => {
     gulp.watch(path.src.scss, gulp.series('scss'));
-    gulp.watch(path.src.js + '/*', gulp.series('js'));
+    gulp.watch(path.src.js, gulp.series('js'));
     gulp.watch(path.src.img + '/*', gulp.series('images'));
 });
 
-gulp.task('build', gulp.series('scss', 'js', 'images', done => {
-    done()
-}));
+gulp.task('build', gulp.series('scss', 'js', 'images', done => done()));
 
 gulp.task('clear', () =>
     cache.clearAll()
 );
 
-gulp.task('default', gulp.series('scss', 'js', 'images', 'watcher'), done => {
-    done();
-});
+gulp.task('default', gulp.series('scss', 'js', 'images', gulp.parallel('connect', 'watcher')), done => done());

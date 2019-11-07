@@ -5,6 +5,7 @@
     "gulp": "^4.0.2",
     "gulp-cache": "^1.1.3",
     "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
     "gulp-imagemin": "^6.1.1",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2",
@@ -18,6 +19,8 @@
     "gulp:watch": "gulp",
     "build": "gulp build",
     "deploy": "yarn build && node deploy",
-    "project:clear": "gulp clear && rm -rf ./dist/js/ && rm -rf ./dist/css/ && rm -rf ./dist/img/"
+    "project:clear": "gulp clear && rm -rf ./dist/js/ && rm -rf ./dist/css/ && rm -rf ./dist/img/",
+    "rebuild-sass": "npm rebuild node-sass",
+    "unused-deps": "depcheck"
   }
 }
