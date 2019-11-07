@@ -80,10 +80,17 @@ gulp.task('js', (done) => {
     done();
 });
 
+gulp.task('html', done => {
+    gulp.src(dist)
+        .pipe(connect.reload());
+    done();
+});
+
 gulp.task('watcher', () => {
     gulp.watch(path.src.scss, gulp.series('scss'));
     gulp.watch(path.src.js, gulp.series('js'));
     gulp.watch(path.src.img + '/*', gulp.series('images'));
+    gulp.watch(dist + '/index.html', gulp.series('html'));
 });
 
 gulp.task('build', gulp.series('scss', 'js', 'images', done => done()));
