@@ -1,39 +1,56 @@
 const buttons = document.querySelectorAll('button[data-modal="open"]'),
     mainForm = document.querySelector('#modal');
 
-const modal = (modal, state) => {
-    const form = modal.querySelector('.modal-form');
-    // const fields = form.querySelectorAll('input[type="text"], select');
-    // fields.forEach(f => f.value = '');
+const modal = (params) => {
+    const {
+        modalSelector,
+        formSelector,
+        state,
+        animationIn,
+        animationOut
+    } = params;
+
+    const modal = document.querySelector(modalSelector);
+    const form = modal.querySelector(formSelector);
 
     if (state === 'close') {
-        form.classList.add('fadeOutUp');
+        form.classList.add(animationOut);
         setTimeout(() => {
-            form.classList.add('fadeInDown');
-            form.classList.remove('fadeOutUp');
             modal.classList.add('d-none');
+            form.classList.remove(animationOut);
+            form.classList.add(animationIn);
             document.body.style.overflow = 'auto';
         }, 650)
     } else {
-        form.classList.add('fadeInDown');
+        form.classList.add(animationIn);
         modal.classList.remove('d-none');
         document.body.style.overflow = 'hidden';
         setTimeout(() => {
-            form.classList.remove('fadeInDown');
+            form.classList.remove(animationIn);
         }, 1000)
     }
 };
 
 buttons.forEach(
-    btn => btn.addEventListener('click', () => {
-        modal(mainForm, 'open');
-    })
+    btn => btn.addEventListener('click', () => modal({
+        modalSelector: '#modal',
+        formSelector: '.modal-form',
+        state: 'open',
+        animationIn: 'fadeInDown',
+        animationOut: 'fadeOutUp'
+    }))
 );
 
 document.addEventListener('click', event => {
     const t = event.target;
     const attr = t.dataset.modal;
     if (attr === 'close') {
-        modal(mainForm, 'close');
+        modal({
+            modalSelector: '#modal',
+            formSelector: '.modal-form',
+            state: 'close',
+            animationIn: 'fadeInDown',
+            animationOut: 'fadeOutUp'
+        });
     }
 });
