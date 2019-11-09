@@ -230,3 +230,10 @@ select.form-control option[value=""] {
 a{
   color: $color-secondary;
 }
+
+.burger-right{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 5%;
+}

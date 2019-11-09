@@ -1,5 +1,4 @@
-const buttons = document.querySelectorAll('button[data-modal="open"]'),
-    mainForm = document.querySelector('#modal');
+const buttons = document.querySelectorAll('button[data-modal="open"]');
 
 const modal = (params) => {
     const {
@@ -11,10 +10,12 @@ const modal = (params) => {
         overflow = true
     } = params;
 
-    console.log(overflow)
-
     const modal = document.querySelector(modalSelector);
-    const form = modal.querySelector(formSelector);
+    let form = modal.querySelector(formSelector);
+
+    if (modalSelector === formSelector){
+        form = modal;
+    }
 
     if (state === 'close') {
         form.classList.add(animationOut);
