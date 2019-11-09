@@ -4,6 +4,21 @@
     img{
       @include border-radius-5;
     }
+    &__text {
+      min-height: 106px;
+      @media screen and (max-width: 767px) {
+        min-height: 130px;
+      }
+      @media screen and (max-width: 575px) {
+        min-height: 150px;
+      }
+      @media screen and (max-width: 480px) {
+        min-height: 170px;
+      }
+      @media screen and (max-width: 390px) {
+        min-height: 235px;
+      }
+    }
   }
 
   &-nav {
