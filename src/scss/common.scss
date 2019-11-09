@@ -201,12 +201,6 @@ img {
     border: 1px solid $grey-secondary;
     border-radius: 3px;
   }
-
-  &-text {
-    a {
-      color: $color-secondary;
-    }
-  }
 }
 
 select.form-control {
@@ -231,4 +225,8 @@ select.form-control option {
 select.form-control:invalid,
 select.form-control option[value=""] {
   color: $grey-secondary;
+}
+
+a{
+  color: $color-secondary;
 }
