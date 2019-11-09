@@ -19,7 +19,7 @@ class SliderFeedback {
 
     state = {
         slides: [],
-        tickTime: 3000,
+        tickTime: 5000,
         visibleSlides: [],
         shiftSlide: {}
     };
@@ -51,10 +51,8 @@ class SliderFeedback {
     });
 
     addListeners = () => {
-        this.arrows.forEach((arrow, i) => arrow.addEventListener('click', ()=>{
+        this.arrows.forEach((arrow, i) => arrow.addEventListener('click', () => {
             this.functions[i]();
-            this.stopAutoplay();
-            this.startAutoplay();
         }))
     };
 
