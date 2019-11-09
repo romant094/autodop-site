@@ -19,7 +19,7 @@
   "scripts": {
     "gulp:watch": "gulp",
     "build": "gulp build",
-    "deploy": "yarn build && node deploy",
+    "build & deploy": "yarn build && node deploy",
     "project:clear": "gulp clear && rm -rf ./dist/js/ && rm -rf ./dist/css/ && rm -rf ./dist/img/",
     "rebuild-sass": "npm rebuild node-sass",
     "unused-deps": "depcheck",

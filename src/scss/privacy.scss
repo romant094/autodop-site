@@ -1,0 +1,11 @@
+.privacy{
+  @include overflow(8000, $overflow-color);
+
+  &-policy{
+    background-color: $white;
+    padding: 40px 20px;
+    overflow: auto;
+    height: 90%;
+    @include border-radius-5;
+  }
+}

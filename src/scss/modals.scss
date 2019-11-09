@@ -1,14 +1,6 @@
 .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include overflow(7000, $overflow-color);
+
   @media screen and (max-height: 660px) {
     overflow: scroll;
     align-items: flex-start;
@@ -135,18 +127,12 @@
 }
 
 .results {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 9999;
-  display: flex;
+  @include overflow(8000, $overflow-color);
 
   &-content {
     padding: 55px 50px;
     background-color: $white;
-    @include border-radius;
+    @include border-radius-5;
     @include shadow;
     text-align: center;
     max-width: 378px;

@@ -7,8 +7,11 @@ const modal = (params) => {
         formSelector,
         state,
         animationIn,
-        animationOut
+        animationOut,
+        overflow = true
     } = params;
+
+    console.log(overflow)
 
     const modal = document.querySelector(modalSelector);
     const form = modal.querySelector(formSelector);
@@ -19,12 +22,12 @@ const modal = (params) => {
             modal.classList.add('d-none');
             form.classList.remove(animationOut);
             form.classList.add(animationIn);
-            document.body.style.overflow = 'auto';
+            if (overflow) document.body.style.overflow = 'auto';
         }, 650)
     } else {
         form.classList.add(animationIn);
         modal.classList.remove('d-none');
-        document.body.style.overflow = 'hidden';
+        if (overflow) document.body.style.overflow = 'hidden';
         setTimeout(() => {
             form.classList.remove(animationIn);
         }, 1000)
@@ -44,13 +47,39 @@ buttons.forEach(
 document.addEventListener('click', event => {
     const t = event.target;
     const attr = t.dataset.modal;
-    if (attr === 'close') {
-        modal({
-            modalSelector: '#modal',
-            formSelector: '.modal-form',
-            state: 'close',
-            animationIn: 'fadeInDown',
-            animationOut: 'fadeOutUp'
-        });
+
+    switch (attr) {
+        case 'close':
+            modal({
+                modalSelector: '#modal',
+                formSelector: '.modal-form',
+                state: 'close',
+                animationIn: 'fadeInDown',
+                animationOut: 'fadeOutUp'
+            });
+            break;
+        case 'close-privacy':
+            modal({
+                modalSelector: '.privacy',
+                formSelector: '.privacy-policy',
+                state: 'close',
+                animationIn: 'fadeInDown',
+                animationOut: 'fadeOutUp'
+            });
+            break;
     }
 });
+
+document
+    .querySelectorAll('a[data-modal="policy"]')
+    .forEach(a => a.addEventListener('click', e => {
+            e.preventDefault();
+            modal({
+                modalSelector: '.privacy',
+                formSelector: '.privacy-policy',
+                state: 'open',
+                animationIn: 'fadeInDown',
+                animationOut: 'fadeOutUp'
+            });
+        })
+    );
