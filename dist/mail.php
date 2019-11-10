@@ -1,6 +1,6 @@
 <?php
 sleep(3);
-$to = "ar@askque.ru";
+$to = "info@autodopspb.ru";
 $subject = "Заполнена форма обратной связи на сайте Автодоп";
 $from = 'noreply@autodop-spb.ru';
 

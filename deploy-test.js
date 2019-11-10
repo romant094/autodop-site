@@ -7,7 +7,7 @@ const config = {
     host: "infoauzx.beget.tech",
     port: 21,
     localRoot: __dirname + "/dist",
-    remoteRoot: "/autodopspb.ru/public_html",
+    remoteRoot: "/infoauzx.beget.tech/public_html",
     include: ["**/**"],
     exclude: [],
     deleteRemote: false,

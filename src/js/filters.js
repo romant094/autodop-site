@@ -33,8 +33,13 @@ filterActions.forEach(el => {
     })
 });
 
-// 'gallery.php?type=1'
-const route = './database/gallery.json';
+const path = ['./database/gallery.json', 'gallery.php?type=1'];
+let route = path[1];
+if (window.location.host === 'localhost:8888') {
+    route = path[0];
+}
+console.log(route)
+
 const filters = ['polishing_1', 'polishing_2', 'repair'];
 
 const handleClick = (el) => {
