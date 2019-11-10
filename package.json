@@ -17,7 +17,7 @@
     "readable-stream": "^3.4.0"
   },
   "scripts": {
-    "gulp:watch": "gulp",
+    "start": "gulp",
     "build": "gulp build",
     "build & deploy": "yarn build && node deploy",
     "project:clear": "gulp clear && rm -rf ./dist/js/ && rm -rf ./dist/css/ && rm -rf ./dist/img/",

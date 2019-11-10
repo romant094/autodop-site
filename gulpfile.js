@@ -53,7 +53,7 @@ gulp.task('scss', (done) => {
 });
 
 gulp.task('images', (done) => {
-    gulp.src([path.src.img, path.src.img + '/*'])
+    gulp.src([path.src.img, path.src.img + '/**/*'])
         .pipe(plumber())
         .pipe(cache(imagemin([
             imagemin.gifsicle({interlaced: true}),

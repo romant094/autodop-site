@@ -4,6 +4,7 @@
 
     li {
       cursor: pointer;
+      margin-bottom: 15px;
     }
 
     li.active {
@@ -22,14 +23,20 @@
   &-list {
     margin-bottom: 50px;
 
-    &__item{
-      @media screen and (max-width: 991px) {
-        margin-bottom: 20px;
-      }
-      img{
+    &__item {
+      margin-bottom: 20px;
+
+      &-inner {
+        max-height: 84px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
         @include border-radius-5;
-        @include shadow;
-        cursor: pointer;
+
+        img {
+          @include shadow;
+          cursor: pointer;
+        }
       }
     }
   }
