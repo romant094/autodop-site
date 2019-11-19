@@ -7,7 +7,7 @@
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body id="top">
 <header class="header">
     <div class="header-decor"></div>
     <div class="header-info">
@@ -139,13 +139,14 @@
                     </div>
                 </div>
             </div>
+            <!-- TODO автоматом пересчитывать количество лет на рынке, количество точек в городе, добавлять 3 стекла в день-->
             <div class="section-content d-flex justify-content-between about-cards">
                 <div class="about-card">
-                    <div class="about-card__header">7</div>
+                    <div class="about-card__header" id="yearsInMarket">7</div>
                     <div class="about-card__text">лет на рынке</div>
                 </div>
                 <div class="about-card">
-                    <div class="about-card__header">5 000</div>
+                    <div class="about-card__header" id="worksCount">5 000</div>
                     <div class="about-card__text">восстановленных стекол</div>
                 </div>
                 <div class="about-card">
@@ -360,9 +361,9 @@
                 <div class="filter">
                     <ul class="filter-params list d-flex row pl-3 pl-3">
                         <li class="mr-3 active" data-filter="0">Все</li>
-                        <li class="mr-3" data-filter="polishing_1">Полировка лобового стекла</li>
-                        <li class="mr-3" data-filter="polishing_2">Ремонт лобового стекла</li>
-                        <li data-filter="repair">Полировка фар</li>
+                        <li class="mr-3" data-filter="polishing_2">Полировка лобового стекла</li>
+                        <li class="mr-3" data-filter="polishing_1">Полировка фар</li>
+                        <li data-filter="repair">Ремонт лобового стекла</li>
                     </ul>
                     <div class="filter-content slide-comparison">
                         <img loading="lazy" src="img/gallery/polishing_1/1-after.jpg" id="filter-after" alt="after">
@@ -536,7 +537,7 @@
                     <div class="info contacts-tech">
                         <p>Разработка и&nbsp;поддержка сайта <a class="askque-link"
                                                                 href="https://askque.ru">askque.ru</a></p>
-                        <p>Все права защищены, 2019</p>
+                        <p>Все права защищены, <span id="siteYear">2019</span></p>
                     </div>
                 </div>
             </div>
@@ -1012,6 +1013,17 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="go-to-top d-none">
+    <a href="#top" class="scroll">
+        <svg width="28" height="30" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 13.9656L14 1.5625L26.5 13.9656" stroke="#A5062F" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round" />
+            <path d="M14 3.28577V28.4373" stroke="#A5062F" stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round" />
+        </svg>
+    </a>
 </div>
 
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=15a6f0aa-8fae-4588-a2a7-5580f0733cc8"

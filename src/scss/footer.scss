@@ -110,6 +110,9 @@
 
     &-socials, &-tech {
       padding-left: 0 !important;
+      span{
+        color: $white;
+      }
 
       &::before {
         display: none !important;

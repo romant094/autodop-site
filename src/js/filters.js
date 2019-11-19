@@ -38,7 +38,6 @@ let route = path[1];
 if (window.location.host === 'localhost:8888') {
     route = path[0];
 }
-console.log(route)
 
 const filters = ['polishing_1', 'polishing_2', 'repair'];
 
@@ -96,9 +95,4 @@ fetch(route)
             items[filter] = res[filter].filter(item => item.length > 2);
             items[filter].forEach(item => renderGallery(item, filter))
         });
-
-        console.log(items)
     });
-
-// toggle-more
-// filter-items
