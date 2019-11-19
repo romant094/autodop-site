@@ -11,6 +11,9 @@ const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const connect = require('gulp-connect');
 const open = require('gulp-open');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const rename = require("gulp-rename");
 
 const src = './src';
 const dist = './dist';
@@ -73,10 +76,26 @@ gulp.task('js', (done) => {
     gulp.src(path.src.js)
         .pipe(plumber())
         .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['@babel/env'],
+            plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-transform-runtime']
+        }))
         .pipe(concat('bundle.js'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(path.dist.js))
         .pipe(connect.reload());
+    done();
+});
+
+gulp.task('compress', (done) =>{
+    gulp.src(path.dist.js + '/bundle.js')
+        .pipe(plumber())
+        .pipe(uglify())
+        .pipe(rename((path) => {
+            path.basename += ".min";
+            path.extname = ".js";
+        }))
+        .pipe(gulp.dest(path.dist.js));
     done();
 });
 
@@ -93,7 +112,7 @@ gulp.task('watcher', () => {
     gulp.watch(dist + '/index.html', gulp.series('html'));
 });
 
-gulp.task('build', gulp.series('scss', 'js', 'images', done => done()));
+gulp.task('build', gulp.series('scss', gulp.series('js', 'compress', done => done()), 'images', done => done()));
 
 gulp.task('clear', () =>
     cache.clearAll()
