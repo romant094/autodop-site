@@ -1,62 +1,73 @@
 class SliderFeedback {
-    constructor(selector, data, autoplay = false) {
+    constructor(selector, data=[], autoplay = false) {
+        this.state = {
+            slides: data.map((item, i) => ({...item, id: i})),
+            tickTime: 5000,
+            visibleSlides: [],
+            shiftSlide: {}
+        };
+
         if (autoplay) {
             this.startAutoplay();
         }
 
-        this.state.slides = data.map((item, i) => ({...item, id: i}));
+
+        // this.state.slides = data.map((item, i) => ({...item, id: i}));
         this.images = document.querySelectorAll(`${selector} .person-photo`);
         this.text = document.querySelector(`${selector} .slider-content__text`);
         this.name = document.querySelector(`${selector} .slider-content__name`);
         this.nextArrow = document.querySelector(`${selector} #next-arrow svg`);
         this.prevArrow = document.querySelector(`${selector} #prev-arrow svg`);
         this.arrows = [this.nextArrow, this.prevArrow];
+
+        this.prevSlide = ()=> {
+            this.cutSlides();
+            this.state.shiftSlide = this.state.slides.shift();
+            this.setState('slides', [...this.state.slides, this.state.shiftSlide]);
+            this.renderSlider();
+        };
+
+        this.nextSlide=()=> {
+            this.cutSlides();
+            this.state.shiftSlide = this.state.slides.pop();
+            this.setState('slides', [this.state.shiftSlide, ...this.state.slides]);
+            this.renderSlider();
+        };
+
         this.functions = [this.prevSlide, this.nextSlide];
+
         this.cutSlides();
         this.renderSlider();
         this.addListeners();
     }
 
-    state = {
-        slides: [],
-        tickTime: 5000,
-        visibleSlides: [],
-        shiftSlide: {}
+    cutSlides() {
+        this.state.visibleSlides = this.state.slides.map((item, i) => {
+            if (i < 5) {
+                return Object.assign({}, item)
+            }
+        })
     };
 
-    prevSlide = () => {
-        this.cutSlides();
-        this.state.shiftSlide = this.state.slides.shift();
-        this.setState('slides', [...this.state.slides, this.state.shiftSlide]);
-        this.renderSlider();
+    setState(state, newValue) {
+        this.state[state] = newValue
     };
 
-    nextSlide = () => {
-        this.cutSlides();
-        this.state.shiftSlide = this.state.slides.pop();
-        this.setState('slides', [this.state.shiftSlide, ...this.state.slides]);
-        this.renderSlider();
+    startAutoplay() {
+        this.state.intervalId = setInterval(this.nextSlide, this.state.tickTime)
     };
 
-    setState = (state, newValue) => this.state[state] = newValue;
+    stopAutoplay() {
+        clearInterval(this.state.intervalId)
+    };
 
-    startAutoplay = () => this.state.intervalId = setInterval(this.nextSlide, this.state.tickTime);
-
-    stopAutoplay = () => clearInterval(this.state.intervalId);
-
-    cutSlides = () => this.state.visibleSlides = this.state.slides.map((item, i) => {
-        if (i < 5) {
-            return Object.assign({}, item)
-        }
-    });
-
-    addListeners = () => {
+    addListeners() {
         this.arrows.forEach((arrow, i) => arrow.addEventListener('click', () => {
             this.functions[i]();
         }))
     };
 
-    renderSlider = () => {
+    renderSlider() {
         this.images.forEach((img, i) => img.src = this.state.visibleSlides[i].img);
         this.text.innerHTML = this.state.visibleSlides[2].text;
         this.name.textContent = this.state.visibleSlides[2].name;
@@ -72,11 +83,11 @@ class SliderAbout {
         this.currentSlideImg = this.slides[this.activeSlide].querySelector('img');
     }
 
-    addListener = () => {
+    addListener() {
         this.slideClick();
     };
 
-    toggleActiveClass = (i, param) => {
+    toggleActiveClass(i, param) {
         if (param === 'add') {
             this.slides[i].classList.add('active');
         } else {
@@ -84,7 +95,7 @@ class SliderAbout {
         }
     };
 
-    slideClick = () => {
+    slideClick() {
         this.slides.forEach((slide, i) => {
             slide.addEventListener('click', (e) => {
                 const target = e.target.tagName;

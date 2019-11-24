@@ -5,16 +5,22 @@ class Tabs {
         this.tabContent = this.tabContainer.querySelectorAll('.tabs-content li');
     }
 
-    removeActive = elements => elements.forEach(el => el.classList.remove('active'));
+    removeActive(elements) {
+        elements.forEach(el => el.classList.remove('active'))
+    };
 
-    addActive = el => el.classList.add('active');
+    addActive(el) {
+        el.classList.add('active')
+    };
 
-    addListener = () => this.actions.forEach((el, i) => el.addEventListener('click', () => {
-        this.removeActive(this.actions);
-        this.removeActive(this.tabContent);
-        this.addActive(this.actions[i]);
-        this.addActive(this.tabContent[i]);
-    }))
+    addListener() {
+        this.actions.forEach((el, i) => el.addEventListener('click', () => {
+            this.removeActive(this.actions);
+            this.removeActive(this.tabContent);
+            this.addActive(this.actions[i]);
+            this.addActive(this.tabContent[i]);
+        }))
+    }
 }
 
 
