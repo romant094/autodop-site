@@ -76,10 +76,10 @@ gulp.task('js', (done) => {
     gulp.src(path.src.js)
         .pipe(plumber())
         .pipe(sourcemaps.init())
-        .pipe(babel({
-            presets: ['@babel/env'],
-            plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-transform-runtime']
-        }))
+        // .pipe(babel({
+            // presets: ['@babel/env'],
+            // plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-transform-runtime']
+        // }))
         .pipe(concat('bundle.js'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(path.dist.js))
