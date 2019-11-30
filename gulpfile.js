@@ -13,7 +13,8 @@ const connect = require('gulp-connect');
 const open = require('gulp-open');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
-const rename = require("gulp-rename");
+const rename = require('gulp-rename');
+const cssmin = require('@feq/gulp-css-min');
 
 const src = './src';
 const dist = './dist';
@@ -55,6 +56,15 @@ gulp.task('scss', (done) => {
     done();
 });
 
+gulp.task('css:min', (done) => {
+    gulp.src(path.dist.css + '/styles.css')
+        .pipe(plumber())
+        .pipe(cssmin())
+        .pipe(rename(({suffix: '.min'})))
+        .pipe(gulp.dest(path.dist.css));
+    done();
+});
+
 gulp.task('images', (done) => {
     gulp.src([path.src.img, path.src.img + '/**/*'])
         .pipe(plumber())
@@ -77,8 +87,8 @@ gulp.task('js', (done) => {
         .pipe(plumber())
         .pipe(sourcemaps.init())
         // .pipe(babel({
-            // presets: ['@babel/env'],
-            // plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-transform-runtime']
+        // presets: ['@babel/env'],
+        // plugins: ['@babel/plugin-proposal-class-properties', '@babel/plugin-transform-runtime']
         // }))
         .pipe(concat('bundle.js'))
         .pipe(sourcemaps.write('.'))
@@ -87,13 +97,13 @@ gulp.task('js', (done) => {
     done();
 });
 
-gulp.task('compress', (done) =>{
+gulp.task('compress', (done) => {
     gulp.src(path.dist.js + '/bundle.js')
         .pipe(plumber())
         .pipe(uglify())
         .pipe(rename((path) => {
-            path.basename += ".min";
-            path.extname = ".js";
+            path.basename += '.min';
+            path.extname = '.js';
         }))
         .pipe(gulp.dest(path.dist.js));
     done();
@@ -112,10 +122,10 @@ gulp.task('watcher', () => {
     gulp.watch(dist + '/index.html', gulp.series('html'));
 });
 
-gulp.task('build', gulp.series('scss', gulp.series('js', 'compress', done => done()), 'images', done => done()));
+gulp.task('build', gulp.series(gulp.series('scss', 'css:min', done => done()), 'js', 'images', done => done()));
 
 gulp.task('clear', () =>
     cache.clearAll()
 );
 
-gulp.task('default', gulp.series('scss', 'js', 'images', gulp.parallel('connect', 'open', 'watcher')), done => done());
+gulp.task('default', gulp.series(gulp.series('build', gulp.parallel('connect', 'open', 'watcher')), done => done()));

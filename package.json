@@ -32,5 +32,8 @@
     "rebuild-sass": "npm rebuild node-sass",
     "unused-deps": "depcheck",
     "delete:nm": "rm -rf ./node_modules"
+  },
+  "devDependencies": {
+    "@feq/gulp-css-min": "^1.0.0"
   }
 }
