@@ -2,7 +2,7 @@
 sleep(3);
 $to = "info@autodopspb.ru";
 $subject = "Заполнена форма обратной связи на сайте Автодоп";
-$from = 'noreply@autodop-spb.ru';
+$from = 'noreply@autodopspb.ru';
 
 $json = file_get_contents('php://input');
 $decoded = json_decode($json, true);
