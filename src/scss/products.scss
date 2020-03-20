@@ -2,9 +2,16 @@
   font-size: 14px;
   padding-left: 15px;
   margin-bottom: 0;
+
   @media screen and (max-width: 767px) {
     padding-left: 0;
   }
+
+  h5 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
   &-row {
     border-bottom: 1px solid #CDCDCD;
     padding: 10px 0;
@@ -14,12 +21,22 @@
       font-size: 18px;
       border-bottom: 1px solid #939393;
     }
+
+    &--wide {
+      border-bottom: none;
+
+      .table-cell {
+        //margin: 0 auto;
+        //padding-left: 0;
+      }
+    }
   }
 
   &-cell {
     padding-left: 25px;
     display: flex;
     align-items: center;
+
     @media screen and (max-width: 385px) {
       padding-left: 15px;
     }
@@ -29,13 +46,53 @@
 .product-image {
   @media screen and (max-width: 767px) {
     margin-top: 30px;
-    padding-left: 15px!important;
+    padding-left: 15px !important;
   }
+
   img {
     height: 294px;
     @include border-radius-5;
     @media screen and (max-width: 1199px) {
       height: auto;
+    }
+  }
+}
+
+.products {
+  .tabs {
+    &-actions {
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: none;
+
+      @media screen and (min-width: 576px) {
+        border-bottom: 5px solid $grey-primary;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+      }
+
+      li {
+        margin-right: 20px;
+        margin-bottom: 12px;
+
+        @media screen and (min-width: 576px) {
+          margin-bottom: 5px;
+        }
+
+        @media screen and (min-width: 576px) {
+          margin-bottom: 0;
+          margin-right: 0;
+          padding-bottom: 5px;
+          width: 25%;
+        }
+      }
+
+      li.active {
+        @media screen and (min-width: 576px) {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }
