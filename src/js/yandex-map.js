@@ -8,8 +8,8 @@ function init() {
     });
 
     myMap.geoObjects
-        .add(new ymaps.Placemark([60.023227, 30.428670], {
-            balloonContent: 'Салон 2 - ул. Лужская, 3к2'
+        .add(new ymaps.Placemark([60.026365, 30.312580], {
+            balloonContent: 'Салон 2 - Костромской пр., 62'
         }, {
             preset: 'islands#dotIcon',
             iconColor: '#B0052F'
