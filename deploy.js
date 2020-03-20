@@ -3,7 +3,7 @@ const ftpDeploy = new FtpDeploy();
 
 const config = {
     user: "infoauzx_ranton",
-    password: "ci99pqsy",
+    password: "Ci9(pqsY",
     host: "infoauzx.beget.tech",
     port: 21,
     localRoot: __dirname + "/dist",
