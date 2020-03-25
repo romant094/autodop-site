@@ -2,16 +2,18 @@
 
 $query = $_GET['type'];
 
-$files1 = scandir('./img/gallery/polishing_1/');
-$files2 = scandir('./img/gallery/polishing_2/');
-$files3 = scandir('./img/gallery/repair/');
+$files1 = array_diff(scandir('./img/gallery/polishing_1/'), array('..', '.'));
+$files2 = array_diff(scandir('./img/gallery/polishing_2/'), array('..', '.'));
+$files3 = array_diff(scandir('./img/gallery/repair/'), array('..', '.'));
+$files4 = array_diff(scandir('./img/gallery/armoring/'), array('..', '.'));
+$files5 = array_diff(scandir('./img/gallery/other/'), array('..', '.'));
 
 $result = [
     'polishing_1' => $files1,
     'polishing_2' => $files2,
-    'repair' => $files3
+    'repair' => $files3,
+    'armoring' => $files4,
+    'other' => $files5
 ];
 
-$json = json_encode($result);
-
-echo $json;
+echo json_encode($result);

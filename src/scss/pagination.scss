@@ -1,0 +1,16 @@
+.pagination {
+  &-pages {
+    span {
+      font-size: 24px;
+      &.active{
+        font-weight: bold;
+        color: $color-primary-1;
+      }
+    }
+  }
+  &-control{
+    button{
+      svg{}
+    }
+  }
+}

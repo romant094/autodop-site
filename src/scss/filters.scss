@@ -17,11 +17,13 @@
     margin-bottom: 30px;
     width: 100% !important;
     height: auto !important;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
     @include border-radius-5;
   }
 
   &-list {
-    margin-bottom: 50px;
 
     &__item {
       margin-bottom: 20px;
@@ -37,6 +39,26 @@
           @include shadow;
           cursor: pointer;
         }
+      }
+    }
+  }
+}
+
+.pagination {
+    margin-bottom: 15px;
+  &-pages {
+    font-size: 19px;
+    padding: 0 30px;
+  }
+
+  &-control {
+    .btn-icon {
+      font-size: 30px;
+      color: $color-primary-1;
+      border: none;
+
+      &[disabled] {
+        color: #5a6268;
       }
     }
   }

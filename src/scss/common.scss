@@ -112,6 +112,12 @@ p, ul {
   }
 }
 
+.btn {
+  &-icon {
+    padding: 0;
+  }
+}
+
 input[type="text"].form-control {
   font-size: 16px;
   line-height: 20px;
