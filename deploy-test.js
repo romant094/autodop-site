@@ -9,7 +9,7 @@ const config = {
     localRoot: __dirname + "/dist",
     remoteRoot: "/test.autodopspb.ru/public_html",
     include: ["**/**"],
-    exclude: ["img/**"],
+    exclude: [],
     deleteRemote: false,
     forcePasv: true
 };
