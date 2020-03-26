@@ -73,29 +73,16 @@
         }
 
         @media screen and (max-width: 575px) {
-          //a{
-          //  font-size: 30px !important;
-          //}
           &:before {
             display: none;
           }
         }
-        //@media screen and (max-width: 434px) {
-        //  a{
-        //    font-size: 21px !important;
-        //  }
-        //}
+
         a {
           font-size: 18px;
           font-weight: bold;
           color: $black-primary;
 
-        }
-      }
-
-      p {
-        &:first-child {
-          margin-bottom: 15px;
         }
       }
     }
@@ -110,6 +97,7 @@
     @media screen and (min-width: 1200px) {
       margin: 0 auto;
     }
+
     &-item {
       padding: 17px 0;
       margin-right: 54px;

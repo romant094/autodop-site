@@ -7,55 +7,319 @@
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .header p { margin-bottom: 0; }
-        .header-decor { background: #B0052F; /* Old browsers */ background: -moz-linear-gradient(left, #B0052F 0%, #50112C 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, #B0052F 0%, #50112C 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, #B0052F 0%, #50112C 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b0052f', endColorstr='#50112c', GradientType=1); /* IE6-9 */ height: 10px; }
-        .header-logo { display: inline-block; }
-        .header-logo img { display: block; width: 120px; height: auto; }
-        @media screen and (max-width: 434px) { .header-logo img { width: 90px; } }
-        .header-info { padding: 15px 0; background-color: #E0E0E0; }
-        .header-info__contacts .info { position: relative; padding-left: 30px; }
-        @media screen and (max-width: 575px) { .header-info__contacts .info { padding-left: 0; } }\
-        .header-info__contacts .info:before { position: absolute; display: block; background-size: cover; content: ""; background-repeat: no-repeat; background-position: left 0 top 0; left: 0; }
-        .header-info__contacts .address:before { width: 17px; height: 25px; background-image: url("../img/header-geo.svg"); top: 10px; }
-        .header-info__contacts .time:before { width: 16px; height: 16px; background-image: url("../img/header-time.svg"); top: 12px; }
-        .header-info__contacts .phone:before { width: 16px; height: 16px; background-image: url("../img/header-phone.svg"); top: 4px; }
-        @media screen and (max-width: 575px) { .header-info__contacts .phone:before { display: none; } }
-        .header-info__contacts .phone a { font-size: 18px; font-weight: bold; color: #000; }
-        .header-info__contacts p:first-child { margin-bottom: 15px; }
-        .header .navbar { padding: 0; background: #B0052F; /* Old browsers */ background: -moz-linear-gradient(left, #B0052F 0%, #50112C 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(left, #B0052F 0%, #50112C 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(to right, #B0052F 0%, #50112C 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b0052f', endColorstr='#50112c', GradientType=1); /* IE6-9 */ }
-        @media screen and (min-width: 1200px) { .header .nav { margin: 0 auto; } }
-        .header .nav-item { padding: 17px 0; margin-right: 54px; }
-        @media screen and (max-width: 991px) { .header .nav-item { margin-right: 28px; } }
-        .header .nav-item:last-child { margin-right: 0; }
-        .header .nav-link { color: #fff; font-size: 18px; padding: 0; }
-        @media screen and (max-width: 991px) { .header .nav-link { font-size: 16px; } }
-        .header .nav-link:hover { text-decoration: underline; }
-        #burger-menu { cursor: pointer; margin-left: -15px; }
-        #burger-menu .ham { cursor: pointer; -webkit-tap-highlight-color: transparent; transition: transform 400ms; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; }
-        #burger-menu .hamRotate.active { transform: rotate(45deg); }
-        #burger-menu .line { fill: none; transition: stroke-dasharray 400ms, stroke-dashoffset 400ms; stroke: #000; stroke-width: 5.5; stroke-linecap: round; }
-        #burger-menu .ham4 .top { stroke-dasharray: 40 121; }
-        #burger-menu .ham4 .bottom { stroke-dasharray: 40 121; }
-        #burger-menu .ham4.active .top { stroke-dashoffset: -68px; }
-        #burger-menu .ham4.active .bottom { stroke-dashoffset: -68px; }
-        .top { padding: 0 !important; }
-        .top .peppermint-buslide { position: relative; overflow: hidden; background-repeat: no-repeat; background-position: center center; background-size: cover; padding: 100px 0; display: flex; align-items: center; height: 454px; }
-        @media screen and (min-width: 992px) { .top .peppermint-buslide { height: 600px; } }
-        .top .peppermint-buslide:nth-child(1) { background-image: url("../img/header-1.jpg"); }
-        .top .peppermint-buslide:nth-child(2) { background-image: url("../img/header-2.jpg"); }
-        .top .peppermint-buslide:nth-child(3) { background-image: url("../img/header-3.jpg"); }
-        .top .peppermint-buslide__inner { position: relative; z-index: 3; }
-        .top .peppermint-buslide__overlay { background-color: rgba(0, 0, 0, 0.5); position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 2; }
-        @media screen and (min-width: 1200px) { .top .peppermint .btn { margin: 0 auto; } }
-        .top h1 { font-weight: bold; font-size: 30px; line-height: 1.2; margin-bottom: 20px; color: #E0E0E0; max-width: 450px; }
-        @media screen and (min-width: 360px) { .top h1 { font-size: 36px; } }
-        @media screen and (min-width: 772px) { .top h1 { font-size: 48px; max-width: 550px; } }
-        @media screen and (min-width: 992px) { .top h1 { font-size: 56px; max-width: 650px; } }
-        @media screen and (min-width: 1200px) { .top h1 { font-size: 64px; max-width: 750px; margin: 0 auto 20px; text-align: center; } }
-        .top h2 { font-size: 20px; line-height: 1.2; margin-bottom: 30px; color: #E0E0E0; }
-        @media screen and (min-width: 768px) { .top h2 { font-size: 26px; } }
-        @media screen and (min-width: 992px) { .top h2 { font-size: 36px; line-height: 100%; margin-bottom: 50px; } }
-        @media screen and (min-width: 1200px) { .top h2 { margin: 0 auto 50px; text-align: center; } }
+        .header p {
+            margin-bottom: 0;
+        }
+
+        .header-decor {
+            background: #B0052F; /* Old browsers */
+            background: -moz-linear-gradient(left, #B0052F 0%, #50112C 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left, #B0052F 0%, #50112C 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right, #B0052F 0%, #50112C 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b0052f', endColorstr='#50112c', GradientType=1); /* IE6-9 */
+            height: 10px;
+        }
+
+        .header-logo {
+            display: inline-block;
+        }
+
+        .header-logo img {
+            display: block;
+            width: 120px;
+            height: auto;
+        }
+
+        @media screen and (max-width: 434px) {
+            .header-logo img {
+                width: 90px;
+            }
+        }
+
+        .header-info {
+            padding: 15px 0;
+            background-color: #E0E0E0;
+        }
+
+        .header-info__contacts .info {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        @media screen and (max-width: 575px) {
+            .header-info__contacts .info {
+                padding-left: 0;
+            }
+        }
+
+        \
+        .header-info__contacts .info:before {
+            position: absolute;
+            display: block;
+            background-size: cover;
+            content: "";
+            background-repeat: no-repeat;
+            background-position: left 0 top 0;
+            left: 0;
+        }
+
+        .header-info__contacts .address:before {
+            width: 17px;
+            height: 25px;
+            background-image: url("../img/header-geo.svg");
+            top: 10px;
+        }
+
+        .header-info__contacts .time:before {
+            width: 16px;
+            height: 16px;
+            background-image: url("../img/header-time.svg");
+            top: 12px;
+        }
+
+        .header-info__contacts .phone:before {
+            width: 16px;
+            height: 16px;
+            background-image: url("../img/header-phone.svg");
+            top: 4px;
+        }
+
+        @media screen and (max-width: 575px) {
+            .header-info__contacts .phone:before {
+                display: none;
+            }
+        }
+
+        .header-info__contacts .phone a {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .header-info__contacts .city {
+            margin-bottom: 15px;
+        }
+
+        @media screen and (min-width: 576px){
+            .header-info__contacts .city {
+                margin-left: 30px;
+            }
+        }
+        @media screen and (min-width: 768px){
+            .header-info__contacts .city {
+                margin-bottom: 0;
+            }
+        }
+
+        .header .navbar {
+            padding: 0;
+            background: #B0052F; /* Old browsers */
+            background: -moz-linear-gradient(left, #B0052F 0%, #50112C 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left, #B0052F 0%, #50112C 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right, #B0052F 0%, #50112C 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b0052f', endColorstr='#50112c', GradientType=1); /* IE6-9 */
+        }
+
+        @media screen and (min-width: 1200px) {
+            .header .nav {
+                margin: 0 auto;
+            }
+        }
+
+        .header .nav-item {
+            padding: 17px 0;
+            margin-right: 54px;
+        }
+
+        @media screen and (max-width: 991px) {
+            .header .nav-item {
+                margin-right: 28px;
+            }
+        }
+
+        .header .nav-item:last-child {
+            margin-right: 0;
+        }
+
+        .header .nav-link {
+            color: #fff;
+            font-size: 18px;
+            padding: 0;
+        }
+
+        @media screen and (max-width: 991px) {
+            .header .nav-link {
+                font-size: 16px;
+            }
+        }
+
+        .header .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        #burger-menu {
+            cursor: pointer;
+            margin-left: -15px;
+        }
+
+        #burger-menu .ham {
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: transform 400ms;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        #burger-menu .hamRotate.active {
+            transform: rotate(45deg);
+        }
+
+        #burger-menu .line {
+            fill: none;
+            transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+            stroke: #000;
+            stroke-width: 5.5;
+            stroke-linecap: round;
+        }
+
+        #burger-menu .ham4 .top {
+            stroke-dasharray: 40 121;
+        }
+
+        #burger-menu .ham4 .bottom {
+            stroke-dasharray: 40 121;
+        }
+
+        #burger-menu .ham4.active .top {
+            stroke-dashoffset: -68px;
+        }
+
+        #burger-menu .ham4.active .bottom {
+            stroke-dashoffset: -68px;
+        }
+
+        .top {
+            padding: 0 !important;
+        }
+
+        .top .peppermint-buslide {
+            position: relative;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            height: 454px;
+        }
+
+        @media screen and (min-width: 992px) {
+            .top .peppermint-buslide {
+                height: 600px;
+            }
+        }
+
+        .top .peppermint-buslide:nth-child(1) {
+            background-image: url("../img/header-1.jpg");
+        }
+
+        .top .peppermint-buslide:nth-child(2) {
+            background-image: url("../img/header-2.jpg");
+        }
+
+        .top .peppermint-buslide:nth-child(3) {
+            background-image: url("../img/header-3.jpg");
+        }
+
+        .top .peppermint-buslide__inner {
+            position: relative;
+            z-index: 3;
+        }
+
+        .top .peppermint-buslide__overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+        }
+
+        @media screen and (min-width: 1200px) {
+            .top .peppermint .btn {
+                margin: 0 auto;
+            }
+        }
+
+        .top h1 {
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #E0E0E0;
+            max-width: 450px;
+        }
+
+        @media screen and (min-width: 360px) {
+            .top h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media screen and (min-width: 772px) {
+            .top h1 {
+                font-size: 48px;
+                max-width: 550px;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .top h1 {
+                font-size: 56px;
+                max-width: 650px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .top h1 {
+                font-size: 64px;
+                max-width: 750px;
+                margin: 0 auto 20px;
+                text-align: center;
+            }
+        }
+
+        .top h2 {
+            font-size: 20px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: #E0E0E0;
+        }
+
+        @media screen and (min-width: 768px) {
+            .top h2 {
+                font-size: 26px;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .top h2 {
+                font-size: 36px;
+                line-height: 100%;
+                margin-bottom: 50px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .top h2 {
+                margin: 0 auto 50px;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body id="top">
@@ -89,8 +353,11 @@
                         10:00&nbsp;-&nbsp;20:00 <br>
                         вс:&nbsp;выходной
                     </div>
-                    <div class="info phone">
-                        <a href="tel:+79119114981">8-911-911-49-81</a>
+                    <div>
+                        <p class="city">Санкт-Петербург</p>
+                        <div class="info phone">
+                            <a href="tel:+79119114981">8-911-911-49-81</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -548,7 +815,7 @@
                     </div>
                     <div class="step d-flex col-lg-4 col-sm-6 col-12">
                         <div class="step-number">2</div>
-                        <div class="step-text">Делаем осмотр стекла на&nbsp;наличие повреждений</div>
+                        <div class="step-text">Делаем осмотр стекла или ЛКП на&nbsp;наличие повреждений</div>
                     </div>
                     <div class="step d-flex col-lg-4 col-sm-6 col-12">
                         <div class="step-number">3</div>
@@ -738,6 +1005,7 @@
             <div class="footer-list">
                 <div class="contacts">
                     <div class="info contacts-address">
+                        <p>Санкт-Петербург</p>
                         <p>наб. Обводного канала, 64к2 <br>
                             Костромской пр., 62</p>
                     </div>
@@ -832,33 +1100,16 @@
                     <select name="salon" class="form-control" required>
                         <option value="" selected hidden disabled>Выберите салон</option>
                         <option value="наб. Обводного канала, 64к2">наб. Обводного канала, 64к2</option>
-                        <option value="ул. Лужская, 3к2">ул. Лужская, 3к2</option>
+                        <option value="Костромской пр., 62">Костромской пр., 62</option>
                     </select>
                 </div>
                 <div class="col-lg-6 col-12">
-                    <select name="time" class="form-control" id="time" required>
-                        <option value="" selected hidden disabled>Удобное время</option>
-                        <option value="10:00">10:00</option>
-                        <option value="10:30">10:30</option>
-                        <option value="11:00">11:00</option>
-                        <option value="11:30">11:30</option>
-                        <option value="10:30">10:30</option>
-                        <option value="12:30">12:30</option>
-                        <option value="13:00">13:00</option>
-                        <option value="13:30">13:30</option>
-                        <option value="14:00">14:00</option>
-                        <option value="14:30">14:30</option>
-                        <option value="15:00">15:00</option>
-                        <option value="15:30">15:30</option>
-                        <option value="16:00">16:00</option>
-                        <option value="16:30">16:30</option>
-                        <option value="17:00">17:00</option>
-                        <option value="17:30">17:30</option>
-                        <option value="18:00">18:00</option>
-                        <option value="18:30">18:30</option>
-                        <option value="19:00">19:00</option>
-                        <option value="19:30">19:30</option>
-
+                    <select name="service" class="form-control" id="time" required>
+                        <option value="" selected hidden disabled>Услуга</option>
+                        <option value="Ремонт стекла">Ремонт стекла</option>
+                        <option value="Полировка стекла">Полировка стекла</option>
+                        <option value="Коррекция ЛКП">Коррекция ЛКП</option>
+                        <option value="Керамические составы">Керамические составы</option>
                     </select>
                 </div>
             </div>
