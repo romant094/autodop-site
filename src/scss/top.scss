@@ -1,42 +1,104 @@
 .top {
-  padding: 158px 0;
+  //background: url("../img/top-bg.png") center right no-repeat, $black-secondary;
+  //background-color: $black-secondary;
+  padding: 0 !important;
 
+  .peppermint {
+    &-buslide {
+      position: relative;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 100px 0;
+      display: flex;
+      align-items: center;
+      height: 454px;
 
-  background: url("../img/top-bg.png") center right no-repeat, $black-secondary;
-  @media screen and (max-width: 1199px) {
-    padding: 120px 0;
-    background-size: 100%;
-    background-position: right bottom;
+      @media screen and (min-width: 992px) {
+        height: 600px;
+      }
+
+      &:nth-child(1) {
+        background-image: url("../img/header-1.jpg");
+      }
+
+      &:nth-child(2) {
+        background-image: url("../img/header-2.jpg");
+      }
+
+      &:nth-child(3) {
+        background-image: url("../img/header-3.jpg");
+      }
+
+      &__inner {
+        position: relative;
+        z-index: 3;
+      }
+
+      &__overlay {
+        background-color: $overflow-color;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+      }
+    }
+    .btn{
+      @media screen and (min-width: 1200px){
+        margin: 0 auto;
+      }
+    }
   }
-  @media screen and (max-width: 575px){
-    padding: 100px 0;
-    background: $black-secondary;
-  }
+
   h1 {
     font-weight: bold;
-    font-size: 64px;
-    line-height: 100%;
+    font-size: 30px;
+    line-height: 1.2;
     margin-bottom: 20px;
     color: $grey-primary;
-    @media screen and (max-width: 991px) {
-      font-size: 50px;
+    max-width: 450px;
+
+    @media screen and (min-width: 360px) {
+      font-size: 36px;
     }
-    @media screen and (max-width: 767px) {
-      font-size: 40px;
+    @media screen and (min-width: 772px) {
+      font-size: 48px;
+      max-width: 550px;
+    }
+    @media screen and (min-width: 992px) {
+      font-size: 56px;
+      max-width: 650px;
+    }
+    @media screen and (min-width: 1200px) {
+      font-size: 64px;
+      max-width: 750px;
+      margin: 0 auto 20px;
+      text-align: center;
     }
   }
 
   h2 {
-    font-size: 36px;
-    line-height: 100%;
+    font-size: 20px;
+    line-height: 1.2;
     margin-bottom: 30px;
     color: $grey-primary;
-    @media screen and (max-width: 991px) {
+
+    @media screen and (min-width: 768px) {
       font-size: 26px;
+      //font-size: 20px;
+      //line-height: 1.2;
     }
-    @media screen and (max-width: 767px) {
-      font-size: 20px;
-      line-height: 1.2;
+    @media screen and (min-width: 992px) {
+      font-size: 36px;
+      line-height: 100%;
+      margin-bottom: 50px;
+    }
+    @media screen and (min-width: 1200px) {
+      margin: 0 auto 50px;
+      text-align: center;
     }
   }
 }

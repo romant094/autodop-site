@@ -38,3 +38,10 @@ new SliderFeedback('#slider-feedback', data, true);
 document
     .querySelectorAll('form')
     .forEach(form => sendForm(form));
+
+const settings = {
+    slideshow: true,
+    speed: 500,
+    slideshowInterval: 5000
+};
+const slider = Peppermint(document.getElementById('peppermint'), settings);

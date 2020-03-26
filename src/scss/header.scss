@@ -107,6 +107,9 @@
   }
 
   .nav {
+    @media screen and (min-width: 1200px) {
+      margin: 0 auto;
+    }
     &-item {
       padding: 17px 0;
       margin-right: 54px;
