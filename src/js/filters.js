@@ -23,7 +23,7 @@ const setOneActive = (array, clazz, el) => {
 
 filterActions.forEach(el => {
     el.addEventListener('click', () => {
-        goToElement(filterItems);
+        // goToElement(filterItems);
         setOneActive(filterActions, 'active', el);
         const activeFilter = el.dataset.filter;
 
@@ -62,13 +62,13 @@ const handleClick = (el) => {
     imgAfter.src = src;
     imgBefore.src = newSrc;
 
-    goToElement(imgAfter);
+    // goToElement(imgAfter);
 };
 
-const goToElement = el => el.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-});
+// const goToElement = el => el.scrollIntoView({
+//     behavior: 'smooth',
+//     block: 'start'
+// });
 
 const addClasses = (el, classes) => classes.forEach(cl => el.classList.add(cl));
 
