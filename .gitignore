@@ -6,3 +6,5 @@
 /dist/img/
 /dist/css/
 /test/
+/.env
+*.log

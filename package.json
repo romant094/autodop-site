@@ -1,10 +1,13 @@
 {
   "dependencies": {
+    "bootstrap": "^4.3.1"
+  },
+  "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/plugin-proposal-class-properties": "^7.7.0",
     "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.7.1",
-    "bootstrap": "^4.3.1",
+    "@feq/gulp-css-min": "^1.0.0",
     "ftp-deploy": "^2.3.5",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
@@ -20,20 +23,18 @@
     "gulp-uglify": "^3.0.2",
     "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-pngquant": "^8.0.0",
-    "node-sass": "^4.13.0"
+    "node-sass": "^4.13.0",
+    "process-env": "^1.1.0"
   },
   "scripts": {
     "start": "gulp",
     "build": "gulp build",
-    "build & deploy": "yarn build && node deploy",
-    "deploy": "node deploy",
-    "deploy:test": "node deploy-test",
+    "build & deploy": "yarn build && yarn deploy:test",
+    "deploy": "env DEPLOY_MODE=production node deploy",
+    "deploy:test": "env DEPLOY_MODE=test node deploy",
     "project:clear": "gulp clear && rm -rf ./dist/js/ && rm -rf ./dist/css/ && rm -rf ./dist/img/",
     "rebuild-sass": "npm rebuild node-sass",
     "unused-deps": "depcheck",
     "delete:nm": "rm -rf ./node_modules"
-  },
-  "devDependencies": {
-    "@feq/gulp-css-min": "^1.0.0"
   }
 }
