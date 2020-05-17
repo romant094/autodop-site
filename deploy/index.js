@@ -1,12 +1,12 @@
+require('dotenv').config()
 const path = require('path');
 const FtpDeploy = require('ftp-deploy');
-const env = require('process-env');
 
-env.get(path.resolve(__dirname + '.env'));
 const ftpDeploy = new FtpDeploy();
 
 const isTest = process.env.DEPLOY_MODE === 'test';
 
+console.log(process.env)
 const {
     FTP_USER: user,
     FTP_PASSWORD: password,
@@ -30,8 +30,9 @@ const config = {
     deleteRemote: false,
     forcePasv: true
 };
+console.log(config)
 
-ftpDeploy
-    .deploy(config)
-    .then(res => console.log('finished:', res))
-    .catch(err => console.log(err));
+// ftpDeploy
+//     .deploy(config)
+//     .then(res => console.log('finished:', res))
+//     .catch(err => console.log(err));
