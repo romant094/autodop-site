@@ -6,7 +6,6 @@ const ftpDeploy = new FtpDeploy();
 
 const isTest = process.env.DEPLOY_MODE === 'test';
 
-console.log(process.env)
 const {
     FTP_USER: user,
     FTP_PASSWORD: password,
@@ -31,8 +30,17 @@ const config = {
     forcePasv: true
 };
 console.log(config)
+console.log('Started uploading...')
 
-// ftpDeploy
-//     .deploy(config)
-//     .then(res => console.log('finished:', res))
-//     .catch(err => console.log(err));
+ftpDeploy
+    .deploy(config)
+    .then(res => console.log('\nfinished:', res))
+    .catch(err => console.log(err));
+
+ftpDeploy.on('uploading', function(data) {
+    const {totalFilesCount, transferredFileCount} = data
+
+    process.stdout.clearLine();
+    process.stdout.cursorTo(0);
+    process.stdout.write(`Progress: ${transferredFileCount} / ${totalFilesCount}`);
+});

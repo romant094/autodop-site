@@ -40,7 +40,7 @@ filterActions.forEach(el => {
     })
 });
 
-const path = ['./database/gallery.json', 'gallery.php?type=1'];
+const path = ['./database/gallery.json', './api/gallery.api?type=1'];
 let route = path[1];
 if (window.location.host === 'localhost:8888') {
     route = path[0];
