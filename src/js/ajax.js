@@ -67,6 +67,7 @@ const sendForm = form => {
 
         request.open('POST', form.action);
         request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        request.setRequestHeader('X-Bots', 'I am not a bot');
         request.send(body);
     };
 

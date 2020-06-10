@@ -7,7 +7,10 @@ $from = 'noreply@autodopspb.ru';
 $json = file_get_contents('php://input');
 $decoded = json_decode($json, true);
 
-//echo $decoded
+if (!apache_request_headers()["x-bots"]) {
+    echo 'It seems that you are a bot. If not go back to the <a href="../">site</a>';
+    die;
+}
 
 $dictionary = [
     "name" => "Имя",
